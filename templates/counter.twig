@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        ul, li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+
+<ul>
+{% for country in countries %}
+    <li class="country"><img class="icon" src="{{ country.icon }}" alt="{{ country.name }}"> {{ country.hits }}</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
