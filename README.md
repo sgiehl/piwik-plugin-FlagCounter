@@ -19,6 +19,15 @@ This plugin allows you to include a small image or iframe in you website display
 - Generates a transparent PNG image showing the flag icons and their total hits
 - Generates simple HTML to be included as iframe
 
+## FAQ
+
+__How can I display the counter for all data in the past__
+
+To do that, set period to ```range``` and date to something like ```1992-01-01,today```.
+
+The full URL for the image would then look like:
+```http://piwik.url/index.php?module=FlagCounter&action=image&idSite=1&period=range&date=1992-01-01,today&cols=2&rows=6```
+
 ## Changelog
 
 - 0.1 Basic version 

@@ -61,8 +61,8 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
         $countries = $this->getCountryData();
 
-        $rows = Common::getRequestVar('rows', 5, 'int');;
-        $cols = Common::getRequestVar('cols', 2, 'int');;
+        $rows = Common::getRequestVar('rows', 5, 'int');
+        $cols = Common::getRequestVar('cols', 2, 'int');
 
         if (count($countries) < $rows * $cols) {
             $rows = ceil(count($countries)/$cols);
