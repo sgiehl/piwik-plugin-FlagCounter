@@ -19,31 +19,100 @@ use Piwik\View;
  */
 class Controller extends \Piwik\Plugin\ControllerAdmin
 {
+
+    protected $cacheKey = 'FlagCounterCountries';
+
+    protected function getCacheLifetime()
+    {
+        $settings = new Settings('FlagCounter');
+        $lifeTime = $settings->cacheLifeTime->getValue();
+        return $lifeTime ? $lifeTime : 3600;
+    }
+
+    /**
+     * Return cached country data
+     *
+     * @return mixed|null
+     */
+    protected function getCachedData()
+    {
+        if (class_exists('\Piwik\CacheFile')) {
+            // Caching in Piwik < 2.10
+            $cache = new \Piwik\CacheFile('cache', $this->getCacheLifetime());
+            return $cache->get($this->cacheKey);
+
+        } else if (class_exists('\Piwik\Cache')) {
+            // Caching in Piwik >= 2.10
+            $cache = \Piwik\Cache::getLazyCache();
+            if ($cache->contains($this->cacheKey)) {
+                return $cache->fetch($this->cacheKey);
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Set the given data to cache
+     *
+     * @param array $data
+     */
+    protected function saveDataInCache($data)
+    {
+        if (class_exists('\Piwik\CacheFile')) {
+            $cache = new \Piwik\CacheFile('cache', $this->getCacheLifetime());
+            $cache->set($this->cacheKey, $data);
+        } else if (class_exists('\Piwik\Cache')) {
+            $cache = \Piwik\Cache::getLazyCache();
+            $cache->save($this->cacheKey, $data, $this->getCacheLifetime());
+        }
+    }
+
+    /**
+     * Return the country data for the given request params
+     *
+     * @return array
+     * @throws \Exception
+     */
     protected function getCountryData()
     {
         $countries = array();
 
+        $cacheData = $this->getCachedData();
+
+        if (!empty($cacheData)) {
+            return $cacheData;
+        }
+
         // fetch data from API as superuser so we can get them even without view access
-        $countryData = Access::getInstance()->doAsSuperUser(function(){
-            $idSite  = Common::getRequestVar('idSite', null, 'int');
-            $period  = Common::getRequestVar('period', null, 'string');
-            $date    = Common::getRequestVar('date', null, 'string');
+        /* @var \Piwik\DataTable $countryData */
+        $countryData = Access::getInstance()->doAsSuperUser(function () {
+            $idSite = Common::getRequestVar('idSite', null, 'int');
+            $period = Common::getRequestVar('period', null, 'string');
+            $date = Common::getRequestVar('date', null, 'string');
             $segment = Request::getRawSegmentFromRequest();
 
             return API::getInstance()->getCountry($idSite, $period, $date, $segment);
         });
 
         foreach ($countryData->getRows() AS $country) {
-            $countries[] = array (
+            $countries[] = array(
                 'name' => $country->getColumn('label'),
                 'icon' => $country->getMetadata('logo'),
                 'hits' => $country->getColumn(2),
             );
         }
 
+        $this->saveDataInCache($countries, 3600);
+
         return $countries;
     }
 
+    /**
+     * Renders the country data in an iframe
+     *
+     * @return string
+     */
     public function iframe()
     {
         // should not use self::renderTemplate since that uses setBasicVariablesView. this will cause
@@ -55,6 +124,11 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         return $view->render();
     }
 
+    /**
+     * Generates a image showing the country flags and their hits
+     *
+     * @throws \Exception
+     */
     public function image()
     {
         header('Content-type: image/png');
@@ -65,10 +139,10 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         $cols = Common::getRequestVar('cols', 2, 'int');
 
         if (count($countries) < $rows * $cols) {
-            $rows = ceil(count($countries)/$cols);
+            $rows = ceil(count($countries) / $cols);
         }
 
-        $im = imagecreatetruecolor($cols*100, $rows*25);
+        $im = imagecreatetruecolor($cols * 100, $rows * 25);
 
         $color = imagecolorallocatealpha($im, 0, 0, 0, 127);
         imagefill($im, 0, 0, $color);
@@ -80,13 +154,13 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
             $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
 
-            imagecopy($im, $icon, 5 + ($currentCol)*100, (5 + $currentRow*25), 0, 0, 16, 12);
+            imagecopy($im, $icon, 5 + ($currentCol) * 100, (5 + $currentRow * 25), 0, 0, 16, 12);
 
-            imagestring($im, 3, 25 + ($currentCol)*100, (5 + $currentRow*25), $country['hits'], imagecolorallocate($im, 0, 0, 0));
+            imagestring($im, 3, 25 + ($currentCol) * 100, (5 + $currentRow * 25), $country['hits'], imagecolorallocate($im, 0, 0, 0));
 
             imagedestroy($icon);
 
-            $currentCol = ++$currentCol%$cols;
+            $currentCol = ++$currentCol % $cols;
 
             if ($currentCol == 0) {
                 $currentRow++;

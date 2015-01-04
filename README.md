@@ -25,7 +25,7 @@ Please keep in mind that everyone will be able to see that kind of statistic as 
 
 __The image is not displayed. What can I do?__
 
-Maybe you have some kind of access restriction for your Piwik like http auth. 
+Maybe you have some kind of access restriction for your Piwik like http auth. The Url needs to be public accessible, or at least accessible to those, who should be able to see the counter.
 
 __How can I display the counter for all data in the past__
 
