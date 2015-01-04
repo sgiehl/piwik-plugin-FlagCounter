@@ -156,7 +156,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
             imagecopy($im, $icon, 5 + ($currentCol) * 100, (5 + $currentRow * 25), 0, 0, 16, 12);
 
-            imagestring($im, 3, 25 + ($currentCol) * 100, (5 + $currentRow * 25), $country['hits'], imagecolorallocate($im, 0, 0, 0));
+            imagestring($im, 3, 25 + ($currentCol) * 100, (5 + $currentRow * 25), number_format($country['hits'], 0, '', '.'), imagecolorallocate($im, 0, 0, 0));
 
             imagedestroy($icon);
 
