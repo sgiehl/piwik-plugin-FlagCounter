@@ -26,7 +26,9 @@ __How can I display the counter for all data in the past__
 To do that, set period to ```range``` and date to something like ```1992-01-01,today```.
 
 The full URL for the image would then look like:
-```http://piwik.url/index.php?module=FlagCounter&action=image&idSite=1&period=range&date=1992-01-01,today&cols=2&rows=6```
+```
+http://piwik.url/index.php?module=FlagCounter&action=image&idSite=1&period=range&date=1992-01-01,today&cols=2&rows=6
+``` 
 
 ## Changelog
 
