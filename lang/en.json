@@ -1,0 +1,7 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Cache lifetime",
+        "CacheIntroduction": "To avoid permanent load to the piwik server the country data will be cached for the given time.",
+        "CacheDescription": "amount in seconds"
+    }
+}

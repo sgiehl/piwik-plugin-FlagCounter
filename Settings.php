@@ -8,6 +8,7 @@
  */
 namespace Piwik\Plugins\FlagCounter;
 
+use Piwik\Piwik;
 use Piwik\Settings\SystemSetting;
 
 class Settings extends \Piwik\Plugin\Settings
@@ -17,18 +18,16 @@ class Settings extends \Piwik\Plugin\Settings
 
     protected function init()
     {
-        $this->setIntroduction('Here you can specify some global configuration settings.');
-
         $this->createCacheSetting();
     }
 
     private function createCacheSetting()
     {
-        $this->cacheLifeTime                        = new SystemSetting('metric', 'Cache time');
+        $this->cacheLifeTime                        = new SystemSetting('metric', Piwik::translate('FlagCounter_CacheTime'));
         $this->cacheLifeTime->type                  = static::TYPE_INT;
         $this->cacheLifeTime->uiControlType         = static::CONTROL_TEXT;
-        $this->cacheLifeTime->introduction          = 'To avoid permanent load to the piwik server the country data will be cached for the given time';
-        $this->cacheLifeTime->description           = 'amount in seconds';
+        $this->cacheLifeTime->introduction          = Piwik::translate('FlagCounter_CacheIntroduction');
+        $this->cacheLifeTime->description           = Piwik::translate('FlagCounter_CacheDescription');
         $this->cacheLifeTime->defaultValue          = 3600;
         $this->cacheLifeTime->readableByCurrentUser = true;
 

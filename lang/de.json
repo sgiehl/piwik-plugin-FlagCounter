@@ -1,0 +1,7 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Lebensdauer des Cache",
+        "CacheIntroduction": "Um dauerhafte Belastung von Piwik zu vermeiden werden die Länder-Daten für den angegebenen Zeitraum zwischengespeichert.",
+        "CacheDescription": "Anzahl in Sekunden"
+    }
+}
