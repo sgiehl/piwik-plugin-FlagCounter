@@ -4,6 +4,8 @@
 
 This plugin allows you to include a small image or iframe in you website displaying the flags and total hits of the countries your website visitors came from
 
+Please keep in mind that everyone will be able to see that kind of statistic as this plugin does not consider the access rights.
+
 ### Requirements
 
 [Piwik](https://github.com/piwik/piwik) 2.0.4 or higher is required.
@@ -20,6 +22,10 @@ This plugin allows you to include a small image or iframe in you website display
 - Generates simple HTML to be included as iframe
 
 ## FAQ
+
+__The image is not displayed. What can I do?__
+
+Maybe you have some kind of access restriction for your Piwik like http auth. 
 
 __How can I display the counter for all data in the past__
 
