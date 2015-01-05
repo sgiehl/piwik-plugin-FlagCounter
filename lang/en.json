@@ -2,6 +2,11 @@
     "FlagCounter": {
         "CacheTime": "Cache lifetime",
         "CacheIntroduction": "To avoid permanent load to the piwik server the country data will be cached for the given time.",
-        "CacheDescription": "amount in seconds"
+        "CacheDescription": "amount in seconds",
+        "PluginDescription": "This plugin allows you to include a simple statistic in your website showing the flags and hits of the countries your visitors came from.",
+        "GeneratorDescription": "Below you can choose some configuration options to generate the url for the image/iframe to be included in your website.",
+        "NumberOfRows": "Number of rows",
+        "NumberOfColumns": "Number of columns",
+        "UrlToImage": "URL to FlagCounter image"
     }
 }

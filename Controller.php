@@ -11,7 +11,9 @@ namespace Piwik\Plugins\FlagCounter;
 use Piwik\Access;
 use Piwik\API\Request;
 use Piwik\Common;
+use Piwik\Piwik;
 use Piwik\Plugins\UserCountry\API;
+use Piwik\Site;
 use Piwik\View;
 
 /**
@@ -84,16 +86,20 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             return $cacheData;
         }
 
-        // fetch data from API as superuser so we can get them even without view access
-        /* @var \Piwik\DataTable $countryData */
-        $countryData = Access::getInstance()->doAsSuperUser(function () {
-            $idSite = Common::getRequestVar('idSite', null, 'int');
-            $period = Common::getRequestVar('period', null, 'string');
-            $date = Common::getRequestVar('date', null, 'string');
-            $segment = Request::getRawSegmentFromRequest();
+        try {
+            // fetch data from API as superuser so we can get them even without view access
+            /* @var \Piwik\DataTable $countryData */
+            $countryData = Access::getInstance()->doAsSuperUser(function () {
+                $idSite = Common::getRequestVar('idSite', null, 'int');
+                $period = Common::getRequestVar('period', null, 'string');
+                $date = Common::getRequestVar('date', null, 'string');
+                $segment = Request::getRawSegmentFromRequest();
 
-            return API::getInstance()->getCountry($idSite, $period, $date, $segment);
-        });
+                return API::getInstance()->getCountry($idSite, $period, $date, $segment);
+            });
+        } catch (\Exception$e) {
+            return array();
+        }
 
         foreach ($countryData->getRows() AS $country) {
             $countries[] = array(
@@ -142,38 +148,56 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $rows = ceil(count($countries) / $cols);
         }
 
-        $im = imagecreatetruecolor($cols * 100, $rows * 25);
+        $im = imagecreatetruecolor($cols * 100 + 1, $rows * 25 + 1);
 
         $color = imagecolorallocatealpha($im, 0, 0, 0, 127);
         imagefill($im, 0, 0, $color);
 
-        $currentRow = 0;
-        $currentCol = 0;
+        try {
+            $currentRow = 0;
+            $currentCol = 0;
 
-        foreach ($countries as $country) {
+            foreach ($countries as $country) {
 
-            $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
+                $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
 
-            imagecopy($im, $icon, 5 + ($currentCol) * 100, (5 + $currentRow * 25), 0, 0, 16, 12);
+                imagecopy($im, $icon, 5 + ($currentCol) * 100, (5 + $currentRow * 25), 0, 0, 16, 12);
 
-            imagestring($im, 3, 25 + ($currentCol) * 100, (5 + $currentRow * 25), number_format($country['hits'], 0, '', '.'), imagecolorallocate($im, 0, 0, 0));
+                imagestring($im, 3, 25 + ($currentCol) * 100, (5 + $currentRow * 25), number_format($country['hits'], 0, '', '.'), imagecolorallocate($im, 0, 0, 0));
 
-            imagedestroy($icon);
+                imagedestroy($icon);
 
-            $currentCol = ++$currentCol % $cols;
+                $currentCol = ++$currentCol % $cols;
 
-            if ($currentCol == 0) {
-                $currentRow++;
+                if ($currentCol == 0) {
+                    $currentRow++;
+                }
+
+                if ($currentRow >= $rows) {
+                    break;
+                }
             }
-
-            if ($currentRow >= $rows) {
-                break;
-            }
+        } catch (\Exception $e) {
         }
 
         imagesavealpha($im, TRUE);
         imagepng($im);
         imagedestroy($im);
         exit;
+    }
+
+    public function index()
+    {
+        Piwik::checkUserIsNotAnonymous();
+
+        $view = new View('@FlagCounter/index');
+
+        $view->idSite = Common::getRequestVar('idSite', $this->idSite, 'int');
+        $view->defaultReportSiteName = Site::getNameFor($view->idSite);
+        $view->date = $this->date;
+
+        self::setPeriodVariablesView($view);
+        $this->setBasicVariablesView($view);
+        return $view->render();
     }
 }

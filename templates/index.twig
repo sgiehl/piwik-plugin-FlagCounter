@@ -1,0 +1,101 @@
+{% extends 'admin.twig' %}
+
+{% block content %}
+    <h2>FlagCounter</h2>
+
+    <div class="flagcounter adminTable">
+        <p>{{ 'FlagCounter_PluginDescription'|translate }}</p>
+
+        <p>{{ 'FlagCounter_GeneratorDescription'|translate }}</p>
+
+        <label class="website-label"><strong>{{ 'General_Website'|translate }}</strong></label>
+
+        <div piwik-siteselector
+             class="sites_autocomplete"
+             siteid="{{ idSite }}"
+             sitename="{{ defaultReportSiteName }}"
+             show-all-sites-item="false"
+             switch-site-on-select="false"
+             id="flagcounter-website"
+             show-selected-site="true"></div>
+
+        <div>
+            <label for="rows"><strong>{{ 'FlagCounter_NumberOfRows'|translate }}</strong></label>
+            <select name="rows" id="rows">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected="selected">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div>
+            <label for="cols"><strong>{{ 'FlagCounter_NumberOfColumns'|translate }}</strong></label>
+            <select name="cols" id="cols">
+                <option value="1">1</option>
+                <option value="2" selected="selected">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+        <div>
+            <label for="period"><strong>{{ 'General_Period'|translate }}</strong></label>
+            <select name="period" id="period">
+                {% for label,thisPeriod in periodsNames %}
+                    <option value="{{ label }}"{% if label==period %} selected="selected"{% endif %}>
+                        {{ thisPeriod.singular }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="date"><strong>{{ 'General_Date'|translate }}</strong></label>
+            <input type="text" name="date" id="date" value="{{ date }}"/>
+        </div>
+
+    </div>
+
+    <p>
+        <strong>{{ 'FlagCounter_UrlToImage'|translate }}:</strong><br />
+        <span id="flagcounter-url">{{ linkTo( { module: 'FlagCounter', action: 'image', rows: 5, cols: 2}) }}</span>
+    </p>
+
+    <p><img id="flagcounterimage" src="{{ linkTo( { module: 'FlagCounter', action: 'image', rows: 5, cols: 2}) }}" /></p>
+
+    <script type="application/javascript">
+
+        (function ($) {
+            $('.flagcounter').find('input,select').bind('change', function(){
+                $('#flagcounterimage').attr('src', broadcast.updateParamValue($(this).attr('name')+'='+$(this).val(), $('#flagcounterimage').attr('src')));
+                $('#flagcounter-url').text($('#flagcounterimage').attr('src'));
+            });
+            $('#flagcounter-website').bind('change', function(e, site){
+                $('#flagcounterimage').attr('src', broadcast.updateParamValue('idSite='+site.id, $('#flagcounterimage').attr('src')));
+                $('#flagcounter-url').text($('#flagcounterimage').attr('src'));
+            });
+        }(jQuery));
+
+    </script>
+
+{% endblock %}
