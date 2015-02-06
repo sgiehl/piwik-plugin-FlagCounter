@@ -74,6 +74,16 @@
             <input type="text" name="date" id="date" value="{{ date }}"/>
         </div>
 
+        <div>
+            <label for="showcode"><strong>{{ 'FlagCounter_ShowCountryCode'|translate }}</strong></label>
+            <input type="checkbox" name="showcode" id="showcode" value="1" />
+        </div>
+
+        <div>
+            <label for="showflag"><strong>{{ 'FlagCounter_HideFlag'|translate }}</strong></label>
+            <input type="checkbox" name="showflag" id="showflag" value="0"/>
+        </div>
+
     </div>
 
     <p>
@@ -87,7 +97,8 @@
 
         (function ($) {
             $('.flagcounter').find('input,select').bind('change', function(){
-                $('#flagcounterimage').attr('src', broadcast.updateParamValue($(this).attr('name')+'='+$(this).val(), $('#flagcounterimage').attr('src')));
+                var value = $(this).attr('type') != 'checkbox' || $(this).is(':checked') ? $(this).val() : '';
+                $('#flagcounterimage').attr('src', broadcast.updateParamValue($(this).attr('name')+'='+value, $('#flagcounterimage').attr('src')));
                 $('#flagcounter-url').text($('#flagcounterimage').attr('src'));
             });
             $('#flagcounter-website').bind('change', function(e, site){

@@ -7,6 +7,8 @@
         "GeneratorDescription": "Below you can choose some configuration options to generate the url for the image/iframe to be included in your website.",
         "NumberOfRows": "Number of rows",
         "NumberOfColumns": "Number of columns",
-        "UrlToImage": "URL to FlagCounter image"
+        "UrlToImage": "URL to FlagCounter image",
+        "ShowCountryCode": "Show country code",
+        "HideFlag": "Hide flags"
     }
 }

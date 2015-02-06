@@ -105,6 +105,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $countries[] = array(
                 'name' => $country->getColumn('label'),
                 'icon' => $country->getMetadata('logo'),
+                'code' => $country->getMetadata('code') != 'xx' ? $country->getMetadata('code') : '  ',
                 'hits' => $country->getColumn(2),
             );
         }
@@ -143,12 +144,26 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
         $rows = Common::getRequestVar('rows', 5, 'int');
         $cols = Common::getRequestVar('cols', 2, 'int');
+        $showCountryCode = Common::getRequestVar('showcode', 0, 'int');
+        $showFlag = Common::getRequestVar('showflag', 1, 'int');
 
-        if (count($countries) < $rows * $cols) {
-            $rows = ceil(count($countries) / $cols);
+        if (!$showCountryCode) {
+            $showFlag = 1;
         }
 
-        $im = imagecreatetruecolor($cols * 100 + 1, $rows * 25 + 1);
+        if (count($countries) < $rows * $cols) {
+            $cols = ceil(count($countries) / $rows);
+        }
+
+        $length     = 0;
+
+        foreach($countries AS $country) {
+            $length = max($length, strlen($country['hits']));
+        }
+
+        $colWidth = 5 + $showFlag*20 + $showCountryCode*10 + $length*10 + 20;
+
+        $im = imagecreatetruecolor($cols * $colWidth + 1, $rows * 25 + 1);
 
         $color = imagecolorallocatealpha($im, 0, 0, 0, 127);
         imagefill($im, 0, 0, $color);
@@ -159,21 +174,21 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
             foreach ($countries as $country) {
 
-                $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
-
-                imagecopy($im, $icon, 5 + ($currentCol) * 100, (5 + $currentRow * 25), 0, 0, 16, 12);
-
-                imagestring($im, 3, 25 + ($currentCol) * 100, (5 + $currentRow * 25), number_format($country['hits'], 0, '', '.'), imagecolorallocate($im, 0, 0, 0));
-
-                imagedestroy($icon);
-
-                $currentCol = ++$currentCol % $cols;
-
-                if ($currentCol == 0) {
-                    $currentRow++;
+                if ($showFlag) {
+                    $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
+                    imagecopy($im, $icon, 5 + ($currentCol) * $colWidth, (5 + $currentRow * 25), 0, 0, 16, 12);
+                    imagedestroy($icon);
                 }
 
-                if ($currentRow >= $rows) {
+                imagestring($im, 3, 5 + $showFlag*20 + ($currentCol) * $colWidth, (5 + $currentRow * 25), ($showCountryCode ? strtoupper($country['code']).' ' : '') . str_pad(number_format($country['hits'], 0, '', '.'), $length, ' ', STR_PAD_LEFT), imagecolorallocate($im, 0, 0, 0));
+
+                $currentRow = ++$currentRow % $rows;
+
+                if ($currentRow == 0) {
+                    $currentCol++;
+                }
+
+                if ($currentCol >= $cols) {
                     break;
                 }
             }

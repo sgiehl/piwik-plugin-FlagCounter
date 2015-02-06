@@ -7,6 +7,8 @@
         "GeneratorDescription": "Hier können Sie einige Optionen wählen um die URL zum Einbinden des Bildes/Iframes in Ihre Seite zu generieren.",
         "NumberOfRows": "Anzahl der Zeilen",
         "NumberOfColumns": "Anzahl der Spalten",
-        "UrlToImage": "URL zum FlagCounter-Bild"
+        "UrlToImage": "URL zum FlagCounter-Bild",
+        "ShowCountryCode": "Länder-Kürzel anzeigen",
+        "HideFlag": "Flaggen verbergen"
     }
 }
