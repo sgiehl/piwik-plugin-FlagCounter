@@ -18,6 +18,8 @@ Please keep in mind that everyone will be able to see that kind of statistic as 
   - date: date to display
   - cols: count of columns to display (default 2)
   - rows: count of rows to display (default 5)
+  - showflag: show flags (default 1)
+  - showcountryode: show country codes (default 0)
 - Generates a transparent PNG image showing the flag icons and their total hits
 - Generates simple HTML to be included as iframe
 
@@ -38,7 +40,10 @@ http://piwik.url/index.php?module=FlagCounter&action=image&idSite=1&period=range
 
 ## Changelog
 
-- 0.1 Basic version 
+- Version 0.1 - Alpha Release
+- Version 0.2 
+  - improved image generation (automatic spacing between items)
+  - possibility to show country codes besides or instead of the flags
 
 ## Support
 
