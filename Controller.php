@@ -110,6 +110,13 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             );
         }
 
+        usort($countries, function($a, $b){
+            if ($a['hits'] == $b['hits']) {
+                return 0;
+            }
+            return ($a['hits'] > $b['hits']) ? -1 : 1;
+        });
+
         $this->saveDataInCache($countries, 3600);
 
         return $countries;
@@ -144,6 +151,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
         $rows = Common::getRequestVar('rows', 5, 'int');
         $cols = Common::getRequestVar('cols', 2, 'int');
+        $font = preg_replace("/[^a-z0-9_-]/i", '', Common::getRequestVar('font', '', 'string'));
         $showCountryCode = Common::getRequestVar('showcode', 0, 'int');
         $showFlag = Common::getRequestVar('showflag', 1, 'int');
 
@@ -161,16 +169,35 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $length = max($length, strlen($country['hits']));
         }
 
-        $colWidth = 5 + $showFlag*20 + $showCountryCode*10 + $length*10 + 20;
-
-        $im = imagecreatetruecolor($cols * $colWidth + 1, $rows * 25 + 1);
-
-        $color = imagecolorallocatealpha($im, 0, 0, 0, 127);
-        imagefill($im, 0, 0, $color);
-
         try {
             $currentRow = 0;
             $currentCol = 0;
+
+            $fontSize = 12;
+            $fontFilePattern = dirname(__FILE__).'/fonts/%s.ttf';
+
+            $fontFile = sprintf($fontFilePattern, 'Cantarell-Regular');
+
+            if (file_exists(sprintf($fontFilePattern, $font))) {
+                $fontFile = sprintf($fontFilePattern, $font);
+            }
+
+            $dimensions = imagettfbbox($fontSize, 0, $fontFile, str_pad('', $length, '0'));
+            $maxNumberWidth = abs($dimensions[4] - $dimensions[0]);
+
+            $countryCodeWidth = 1;
+            if ($showCountryCode) {
+                $dimensions = imagettfbbox($fontSize, 0, $fontFile, 'XXX');
+                $countryCodeWidth = abs($dimensions[4] - $dimensions[0]);
+            }
+
+            $colWidth = 5 + $showFlag*25 + $showCountryCode*$countryCodeWidth + $maxNumberWidth + 20;
+
+            $im = imagecreatetruecolor($cols * $colWidth + 1, $rows * 25 + 1);
+
+            $color = imagecolorallocatealpha($im, 0, 0, 0, 127);
+            imagefill($im, 0, 0, $color);
+
 
             foreach ($countries as $country) {
 
@@ -180,7 +207,32 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
                     imagedestroy($icon);
                 }
 
-                imagestring($im, 3, 5 + $showFlag*20 + ($currentCol) * $colWidth, (5 + $currentRow * 25), ($showCountryCode ? strtoupper($country['code']).' ' : '') . str_pad(number_format($country['hits'], 0, '', '.'), $length, ' ', STR_PAD_LEFT), imagecolorallocate($im, 0, 0, 0));
+                if ($showCountryCode) {
+                    imagettftext(
+                        $im,
+                        $fontSize,
+                        0,
+                        5 + $showFlag * 25 + ($currentCol) * $colWidth,
+                        (17 + ($currentRow) * 25),
+                        imagecolorallocate($im, 0, 0, 0),
+                        $fontFile,
+                        strtoupper($country['code'])
+                    );
+                }
+
+                $dimensions = imagettfbbox($fontSize, 0, $fontFile, number_format($country['hits'], 0, '', '.'));
+                $numberWidth = abs($dimensions[4] - $dimensions[0]);
+
+                imagettftext(
+                    $im,
+                    $fontSize,
+                    0,
+                    5 + $showFlag * 25 + $showCountryCode * $countryCodeWidth + ($currentCol) * $colWidth + $maxNumberWidth-$numberWidth,
+                    (17 + ($currentRow) * 25),
+                    imagecolorallocate($im, 0, 0, 0),
+                    $fontFile,
+                    number_format($country['hits'], 0, '', '.')
+                );
 
                 $currentRow = ++$currentRow % $rows;
 
@@ -193,6 +245,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
                 }
             }
         } catch (\Exception $e) {
+            $im = imagecreatetruecolor(1, 1);
         }
 
         imagesavealpha($im, TRUE);
@@ -210,6 +263,11 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         $view->idSite = Common::getRequestVar('idSite', $this->idSite, 'int');
         $view->defaultReportSiteName = Site::getNameFor($view->idSite);
         $view->date = $this->date;
+
+        $fonts = glob(dirname(__FILE__).'/fonts/*.ttf');
+        $view->fonts = array_map(function($x) {
+            return basename($x, '.ttf');
+        }, $fonts);
 
         self::setPeriodVariablesView($view);
         $this->setBasicVariablesView($view);

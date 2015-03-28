@@ -9,6 +9,7 @@ Please keep in mind that everyone will be able to see that kind of statistic as 
 ### Requirements
 
 [Piwik](https://github.com/piwik/piwik) 2.0.4 or higher is required.
+GD library including ttf support
 
 ### Features
 
@@ -20,6 +21,7 @@ Please keep in mind that everyone will be able to see that kind of statistic as 
   - rows: count of rows to display (default 5)
   - showflag: show flags (default 1)
   - showcountryode: show country codes (default 0)
+  - font: font family to use
 - Generates a transparent PNG image showing the flag icons and their total hits
 - Generates simple HTML to be included as iframe
 
@@ -38,12 +40,19 @@ The full URL for the image would then look like:
 http://piwik.url/index.php?module=FlagCounter&action=image&idSite=1&period=range&date=1992-01-01,today&cols=2&rows=6
 ``` 
 
+__Can I use a custom font?__
+
+Currently all ttf fonts located in the ```fonts``` directory within this plugin are available for usage. If you place a new font there, you should be able to use it.
+
+
 ## Changelog
 
 - Version 0.1 - Alpha Release
 - Version 0.2 
   - improved image generation (automatic spacing between items)
   - possibility to show country codes besides or instead of the flags
+- Version 0.3
+  - added ability to choose a font
 
 ## Support
 
@@ -56,4 +65,10 @@ Feel free to create issues and pull requests.
 ## License
 
 GPLv3 or later
+
+Note: The fonts bundled with this plugin are under the following licenses
+OpenSans: Apache license
+Roboto: Apache license
+Raleway: SIL Open Font License
+Cantarell: SIL Open Font License
 

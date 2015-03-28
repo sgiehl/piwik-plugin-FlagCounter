@@ -60,6 +60,14 @@
             </select>
         </div>
         <div>
+            <label for="cols"><strong>{{ 'FlagCounter_Font'|translate }}</strong></label>
+            <select name="font" id="font">
+                {% for font in fonts %}
+                <option value="{{ font }}">{{ font }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
             <label for="period"><strong>{{ 'General_Period'|translate }}</strong></label>
             <select name="period" id="period">
                 {% for label,thisPeriod in periodsNames %}

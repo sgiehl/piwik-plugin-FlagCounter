@@ -9,6 +9,7 @@
         "NumberOfColumns": "Number of columns",
         "UrlToImage": "URL to FlagCounter image",
         "ShowCountryCode": "Show country code",
-        "HideFlag": "Hide flags"
+        "HideFlag": "Hide flags",
+        "Font": "Font family"
     }
 }
