@@ -10,6 +10,7 @@
         "UrlToImage": "URL to FlagCounter image",
         "ShowCountryCode": "Show country code",
         "HideFlag": "Hide flags",
-        "Font": "Font family"
+        "Font": "Font family",
+        "FontSize": "Font size"
     }
 }

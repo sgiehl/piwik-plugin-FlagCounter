@@ -151,6 +151,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
         $rows = Common::getRequestVar('rows', 5, 'int');
         $cols = Common::getRequestVar('cols', 2, 'int');
+        $fontSize = Common::getRequestVar('fontsize', 12, 'int');
         $font = preg_replace("/[^a-z0-9_-]/i", '', Common::getRequestVar('font', '', 'string'));
         $showCountryCode = Common::getRequestVar('showcode', 0, 'int');
         $showFlag = Common::getRequestVar('showflag', 1, 'int');
@@ -173,7 +174,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $currentRow = 0;
             $currentCol = 0;
 
-            $fontSize = 12;
+            $fontSize = $fontSize < 2 || $fontSize > 30 ? 12 : $fontSize;
             $fontFilePattern = dirname(__FILE__).'/fonts/%s.ttf';
 
             $fontFile = sprintf($fontFilePattern, 'Cantarell-Regular');

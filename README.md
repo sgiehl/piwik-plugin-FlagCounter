@@ -22,6 +22,7 @@ GD library including ttf support
   - showflag: show flags (default 1)
   - showcountryode: show country codes (default 0)
   - font: font family to use
+  - fontsize: font size to use (between 2 and 30; default 12)
 - Generates a transparent PNG image showing the flag icons and their total hits
 - Generates simple HTML to be included as iframe
 
@@ -52,7 +53,7 @@ Currently all ttf fonts located in the ```fonts``` directory within this plugin 
   - improved image generation (automatic spacing between items)
   - possibility to show country codes besides or instead of the flags
 - Version 0.3
-  - added ability to choose a font
+  - added ability to choose a font family & size
 
 ## Support
 
@@ -67,8 +68,8 @@ Feel free to create issues and pull requests.
 GPLv3 or later
 
 Note: The fonts bundled with this plugin are under the following licenses
-OpenSans: Apache license
-Roboto: Apache license
-Raleway: SIL Open Font License
-Cantarell: SIL Open Font License
+- OpenSans: Apache license
+- Roboto: Apache license
+- Raleway: SIL Open Font License
+- Cantarell: SIL Open Font License
 

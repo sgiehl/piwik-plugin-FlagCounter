@@ -10,6 +10,7 @@
         "UrlToImage": "URL zum FlagCounter-Bild",
         "ShowCountryCode": "Länder-Kürzel anzeigen",
         "HideFlag": "Flaggen verbergen",
-        "Font": "Schriftart"
+        "Font": "Schriftart",
+        "FontSize": "Schrifgröße"
     }
 }

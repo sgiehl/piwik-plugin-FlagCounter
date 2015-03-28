@@ -78,6 +78,14 @@
             </select>
         </div>
         <div>
+            <label for="fontsize"><strong>{{ 'FlagCounter_FontSize'|translate }}</strong></label>
+            <select name="fontsize" id="fontsize">
+                {% for i in 2..30 %}
+                <option value="{{ i }}"{% if i==12 %} selected="selected"{% endif %}>{{ i }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
             <label for="date"><strong>{{ 'General_Date'|translate }}</strong></label>
             <input type="text" name="date" id="date" value="{{ date }}"/>
         </div>
