@@ -23,6 +23,7 @@ GD library including ttf support
   - showcountryode: show country codes (default 0)
   - font: font family to use
   - fontsize: font size to use (between 2 and 30; default 12)
+  - fontcolor: font color to use (rgb value; default 0,0,0)
 - Generates a transparent PNG image showing the flag icons and their total hits
 - Generates simple HTML to be included as iframe
 
@@ -53,7 +54,7 @@ Currently all ttf fonts located in the ```fonts``` directory within this plugin 
   - improved image generation (automatic spacing between items)
   - possibility to show country codes besides or instead of the flags
 - Version 0.3
-  - added ability to choose a font family & size
+  - added ability to choose a font family, size & color
 
 ## Support
 

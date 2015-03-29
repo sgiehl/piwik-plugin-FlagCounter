@@ -11,6 +11,7 @@
         "ShowCountryCode": "Länder-Kürzel anzeigen",
         "HideFlag": "Flaggen verbergen",
         "Font": "Schriftart",
-        "FontSize": "Schrifgröße"
+        "FontSize": "Schriftgröße",
+        "FontColor": "Schriftfarbe"
     }
 }

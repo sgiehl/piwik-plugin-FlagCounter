@@ -152,9 +152,16 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         $rows = Common::getRequestVar('rows', 5, 'int');
         $cols = Common::getRequestVar('cols', 2, 'int');
         $fontSize = Common::getRequestVar('fontsize', 12, 'int');
+        $fontColor = Common::getRequestVar('fontcolor', '0,0,0', 'string');
         $font = preg_replace("/[^a-z0-9_-]/i", '', Common::getRequestVar('font', '', 'string'));
         $showCountryCode = Common::getRequestVar('showcode', 0, 'int');
         $showFlag = Common::getRequestVar('showflag', 1, 'int');
+
+        if (substr_count($fontColor, ',') != 2) {
+            $fontColor = '0,0,0';
+        }
+
+        $fontColor = explode(',', $fontColor);
 
         if (!$showCountryCode) {
             $showFlag = 1;
@@ -215,7 +222,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
                         0,
                         5 + $showFlag * 25 + ($currentCol) * $colWidth,
                         (17 + ($currentRow) * 25),
-                        imagecolorallocate($im, 0, 0, 0),
+                        imagecolorallocate($im, $fontColor[0], $fontColor[1], $fontColor[2]),
                         $fontFile,
                         strtoupper($country['code'])
                     );
@@ -230,7 +237,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
                     0,
                     5 + $showFlag * 25 + $showCountryCode * $countryCodeWidth + ($currentCol) * $colWidth + $maxNumberWidth-$numberWidth,
                     (17 + ($currentRow) * 25),
-                    imagecolorallocate($im, 0, 0, 0),
+                    imagecolorallocate($im, $fontColor[0], $fontColor[1], $fontColor[2]),
                     $fontFile,
                     number_format($country['hits'], 0, '', '.')
                 );

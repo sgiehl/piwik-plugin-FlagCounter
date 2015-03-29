@@ -11,6 +11,7 @@
         "ShowCountryCode": "Show country code",
         "HideFlag": "Hide flags",
         "Font": "Font family",
-        "FontSize": "Font size"
+        "FontSize": "Font size",
+        "FontColor": "Font color"
     }
 }
