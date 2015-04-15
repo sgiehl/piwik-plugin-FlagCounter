@@ -31,23 +31,28 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         return $lifeTime ? $lifeTime : 3600;
     }
 
+    protected function getCacheKey($period, $date)
+    {
+        return preg_replace('/[^a-z0-9]/i', '', $this->cacheKey.$period.$date);
+    }
+
     /**
      * Return cached country data
      *
      * @return mixed|null
      */
-    protected function getCachedData()
+    protected function getCachedData($period, $date)
     {
         if (class_exists('\Piwik\CacheFile')) {
             // Caching in Piwik < 2.10
             $cache = new \Piwik\CacheFile('cache', $this->getCacheLifetime());
-            return $cache->get($this->cacheKey);
+            return $cache->get($this->getCacheKey($period, $date));
 
         } else if (class_exists('\Piwik\Cache')) {
             // Caching in Piwik >= 2.10
             $cache = \Piwik\Cache::getLazyCache();
-            if ($cache->contains($this->cacheKey)) {
-                return $cache->fetch($this->cacheKey);
+            if ($cache->contains($this->getCacheKey($period, $date))) {
+                return $cache->fetch($this->getCacheKey($period, $date));
             }
         }
 
@@ -59,14 +64,14 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
      *
      * @param array $data
      */
-    protected function saveDataInCache($data)
+    protected function saveDataInCache($data, $period, $date)
     {
         if (class_exists('\Piwik\CacheFile')) {
             $cache = new \Piwik\CacheFile('cache', $this->getCacheLifetime());
-            $cache->set($this->cacheKey, $data);
+            $cache->set($this->getCacheKey($period, $date), $data);
         } else if (class_exists('\Piwik\Cache')) {
             $cache = \Piwik\Cache::getLazyCache();
-            $cache->save($this->cacheKey, $data, $this->getCacheLifetime());
+            $cache->save($this->getCacheKey($period, $date), $data, $this->getCacheLifetime());
         }
     }
 
@@ -79,8 +84,10 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
     protected function getCountryData()
     {
         $countries = array();
+        $period = Common::getRequestVar('period', null, 'string');
+        $date = Common::getRequestVar('date', null, 'string');
 
-        $cacheData = $this->getCachedData();
+        $cacheData = $this->getCachedData($period, $date);
 
         if (!empty($cacheData)) {
             return $cacheData;
@@ -89,10 +96,8 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         try {
             // fetch data from API as superuser so we can get them even without view access
             /* @var \Piwik\DataTable $countryData */
-            $countryData = Access::getInstance()->doAsSuperUser(function () {
+            $countryData = Access::getInstance()->doAsSuperUser(function () use ($period, $date) {
                 $idSite = Common::getRequestVar('idSite', null, 'int');
-                $period = Common::getRequestVar('period', null, 'string');
-                $date = Common::getRequestVar('date', null, 'string');
                 $segment = Request::getRawSegmentFromRequest();
 
                 return API::getInstance()->getCountry($idSite, $period, $date, $segment);
@@ -117,7 +122,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             return ($a['hits'] > $b['hits']) ? -1 : 1;
         });
 
-        $this->saveDataInCache($countries, 3600);
+        $this->saveDataInCache($countries, $period, $date);
 
         return $countries;
     }
