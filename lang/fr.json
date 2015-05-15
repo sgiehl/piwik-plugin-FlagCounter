@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Durée de vie du cache",
+        "CacheIntroduction": "Pour éviter le chargement systématique des données de pays par Piwik, elles vont être mises en cache pour la période donnée.",
+        "CacheDescription": "montant en secondes",
+        "PluginDescription": "Ce composant vous permet d'inclure de simples statistiques dans votre site web affichant les drapeux et hits des pays d'où proviennent vos visiteurs.",
+        "GeneratorDescription": "Vous pouvez définir ci-dessous des options pour générer l'url de l'image\/l'iframe à inclure dans votre site web.",
+        "NumberOfRows": "Nombre de lignes",
+        "NumberOfColumns": "Nombre de colonnes",
+        "UrlToImage": "URL pour l'image FlagCounter",
+        "ShowCountryCode": "Afficher le code pays",
+        "HideFlag": "Masquer les drapeaux",
+        "Font": "Famille de police",
+        "FontSize": "Taille de police",
+        "FontColor": "Couleur de police"
+    }
+}
