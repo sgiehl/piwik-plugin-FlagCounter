@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Caché permanente",
+        "CacheIntroduction": "Para evitar la constante carga al servidor de Piwik, los datos de países serán cacheados por el tiempo especificado.",
+        "CacheDescription": "tiempo en segundos",
+        "PluginDescription": "Este plugin te permite incluir una simple estadística en tu sitio web mostrando las banderas y visitas de los países de donde provienen tus visitantes.",
+        "GeneratorDescription": "Debajo puedes especificar algunas opciones de configuración para generar la url de la imagen o marco a ser incluido en tu sitio web.",
+        "NumberOfRows": "Número de filas",
+        "NumberOfColumns": "Número de columnas",
+        "UrlToImage": "URL de la imagen de FlagCounter",
+        "ShowCountryCode": "Mostrar código de país",
+        "HideFlag": "Ocultar banderas",
+        "Font": "Fuente",
+        "FontSize": "Tamaño de letra",
+        "FontColor": "Color de letra"
+    }
+}

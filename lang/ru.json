@@ -1,0 +1,14 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Срок жизни кэша",
+        "CacheIntroduction": "Во избежание постоянной нагрузки на сервер piwik данные о стране будут храниться в кэше в течение заданного времени.",
+        "CacheDescription": "количество в секундах",
+        "NumberOfRows": "Число строк",
+        "NumberOfColumns": "Число столбцов",
+        "ShowCountryCode": "Показать код страны",
+        "HideFlag": "Скрыть флаги",
+        "Font": "Шрифт",
+        "FontSize": "Размер шрифта",
+        "FontColor": "Цвет шрифта"
+    }
+}

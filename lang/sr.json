@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Trajanje keširanih podataka",
+        "CacheIntroduction": "Kako bi se izbeglo stalno opterećenje Piwik servera, podaci o zemljama će biti keširani dati vremeski period",
+        "CacheDescription": "vrednost u sekundama",
+        "PluginDescription": "Ovaj dodatak vam omogućuje da u svoj sajt uključite jednostavnu statistiku koja će prikazivati zastave zemalja iz kojih dolaze vaši posetioci.",
+        "GeneratorDescription": "Ovde možete izabrati neke od načina generisanja URL adresa slika\/frejmova koji će biti uključeni u vaš sajt.",
+        "NumberOfRows": "Broj redova",
+        "NumberOfColumns": "Broj kolona",
+        "UrlToImage": "URL do FlagCounter slike",
+        "ShowCountryCode": "Prikaži kod zemlje",
+        "HideFlag": "Sakrij zastave",
+        "Font": "Vrsta slova",
+        "FontSize": "Veličina slova",
+        "FontColor": "Boja slova"
+    }
+}

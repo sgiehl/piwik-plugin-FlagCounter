@@ -1,0 +1,14 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Cache levensduur",
+        "CacheIntroduction": "Om permanente belasting van de piwik server te vermijden, zal de landinfo data gecached worden voor de opgegeven tijd.",
+        "CacheDescription": "duur in seconden",
+        "NumberOfRows": "Aantal rijen",
+        "NumberOfColumns": "Aantal kolommen",
+        "ShowCountryCode": "Toon landcode",
+        "HideFlag": "Verberg vlaggen",
+        "Font": "Lettertype groep",
+        "FontSize": "Lettergrootte",
+        "FontColor": "Tekst kleur"
+    }
+}
