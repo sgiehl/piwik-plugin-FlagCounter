@@ -1,0 +1,8 @@
+{
+    "FlagCounter": {
+        "NumberOfRows": "Antall rader",
+        "NumberOfColumns": "Antall kolonner",
+        "ShowCountryCode": "Vis landskode",
+        "HideFlag": "Skjul flagg"
+    }
+}
