@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "キャッシュの有効期間",
+        "CacheIntroduction": "Piwik サーバーにへの永続的な負荷を避けるために、国のデータは特定の時間にキャッシュされます。",
+        "CacheDescription": "秒量",
+        "PluginDescription": "このプラグインによって、ビジターの国の国旗とヒット数がウェブサイト内に簡単な統計として表示せることができます。",
+        "GeneratorDescription": "ウェブサイトに含まれる画像やiframe の url を生成するいくつかの構成オプションを以下より選択できます。",
+        "NumberOfRows": "行数",
+        "NumberOfColumns": "カラムの数",
+        "UrlToImage": "FlagCounter イメージの URL",
+        "ShowCountryCode": "国コードの表示",
+        "HideFlag": "フラッグを隠す",
+        "Font": "フォントファミリー",
+        "FontSize": "フォントサイズ",
+        "FontColor": "フォントカラー"
+    }
+}

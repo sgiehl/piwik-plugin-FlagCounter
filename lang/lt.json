@@ -1,0 +1,11 @@
+{
+    "FlagCounter": {
+        "NumberOfRows": "Eilučių skaičius",
+        "NumberOfColumns": "Stulpelių skaičius",
+        "ShowCountryCode": "Rodyti šalies kodą",
+        "HideFlag": "Slėpti vėliavas",
+        "Font": "Šriftų šeima",
+        "FontSize": "Šrifto dydis",
+        "FontColor": "Šrifto spalva"
+    }
+}
