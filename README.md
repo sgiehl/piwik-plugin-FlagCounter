@@ -1,5 +1,8 @@
 # Piwik Flag Counter Plugin
 
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=sgiehl&url=https://github.com/sgiehl/piwik-plugin-FlagCounter&title=Piwik Plugin FlagCounter=&tags=github&category=software) 
+
+
 ## Description
 
 This plugin allows you to include a small image or iframe in you website displaying the flags and total hits of the countries your website visitors came from
