@@ -1,6 +1,6 @@
 {
   "name": "FlagCounter",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "This plugin allows you to include a simple statistic in your website showing the flags and hits of the countries your visitors came from",
   "keywords": ["flag", "flagcounter"],
   "license": "GPL v3+",
