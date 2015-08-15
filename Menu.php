@@ -16,7 +16,22 @@ class Menu extends \Piwik\Plugin\Menu
     public function configureAdminMenu(MenuAdmin $menu)
     {
         if (!Piwik::isUserIsAnonymous()) {
-            $menu->addManageItem('FlagCounter', $this->urlForAction('index'), $order = 9);
+            if (!method_exists($menu, 'addManageItem')) {
+                // menu fallback for piwik < 1.11
+                $menu->add(
+                    'CoreAdminHome_MenuManage', 'FlagCounter',
+                    array('module' => 'FlagCounter', 'action' => 'index'),
+                    true,
+                    $order = 3
+                );
+                return;
+            }
+
+            $menu->addManageItem(
+                'FlagCounter',
+                $this->urlForAction('index'),
+                $order = 9
+            );
         }
 
     }

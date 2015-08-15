@@ -94,15 +94,24 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         }
 
         try {
-            // fetch data from API as superuser so we can get them even without view access
-            /* @var \Piwik\DataTable $countryData */
-            $countryData = Access::getInstance()->doAsSuperUser(function () use ($period, $date) {
+
+            if(method_exists('\Piwik\Access', 'doAsSuperUser')) {
+                // fetch data from API as superuser so we can get them even without view access
+                /* @var \Piwik\DataTable $countryData */
+                $countryData = Access::getInstance()->doAsSuperUser(function () use ($period, $date) {
+                    $idSite = Common::getRequestVar('idSite', null, 'int');
+                    $segment = Request::getRawSegmentFromRequest();
+
+                    return API::getInstance()->getCountry($idSite, $period, $date, $segment);
+                });
+            } else {
+                // Fallback for Piwik < 2.8.0
+                Piwik::setUserHasSuperUserAccess();
                 $idSite = Common::getRequestVar('idSite', null, 'int');
                 $segment = Request::getRawSegmentFromRequest();
-
-                return API::getInstance()->getCountry($idSite, $period, $date, $segment);
-            });
-        } catch (\Exception$e) {
+                $countryData = API::getInstance()->getCountry($idSite, $period, $date, $segment);
+            }
+        } catch (\Exception $e) {
             return array();
         }
 
