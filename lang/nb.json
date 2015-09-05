@@ -2,7 +2,11 @@
     "FlagCounter": {
         "NumberOfRows": "Antall rader",
         "NumberOfColumns": "Antall kolonner",
+        "UrlToImage": "URL til FlagCounter-bilde",
         "ShowCountryCode": "Vis landskode",
-        "HideFlag": "Skjul flagg"
+        "HideFlag": "Skjul flagg",
+        "Font": "Skriftfamilie",
+        "FontSize": "Skriftstørrelse",
+        "FontColor": "Skriftfarge"
     }
 }

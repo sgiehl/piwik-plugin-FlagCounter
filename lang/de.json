@@ -3,7 +3,7 @@
         "CacheTime": "Lebensdauer des Cache",
         "CacheIntroduction": "Um dauerhafte Belastung von Piwik zu vermeiden werden die Länder-Daten für den angegebenen Zeitraum zwischengespeichert.",
         "CacheDescription": "Anzahl in Sekunden",
-        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Website einzufügen, die alle Flaggen und Besuchsanzahl der Länder anzeigen, aus denen Ihre Besucher kommen.",
+        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Website einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
         "GeneratorDescription": "Hier können Sie einige Optionen wählen um die URL zum Einbinden des Bildes\/Iframes in Ihre Website zu generieren.",
         "NumberOfRows": "Anzahl der Zeilen",
         "NumberOfColumns": "Anzahl der Spalten",
