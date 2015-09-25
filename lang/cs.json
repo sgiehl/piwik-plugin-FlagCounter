@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Doba životnosti cache",
+        "CacheIntroduction": "Pro zabránění trvalé zátěže Piwik serveru, data zemí budou po danou dobu cachována.",
+        "CacheDescription": "Počet v sekundách",
+        "PluginDescription": "Tento zásuvný modul vám na stránkách umožňuje zobrazit jednoduchou statistiku s vlajkami zemí a počtem návštěv, odkud vaši návštěvníci přišli.",
+        "GeneratorDescription": "Níže můžete zvolit možnosti pro vygenerování URL obrázku\/iframu, který bude vložen na vaše stránky.",
+        "NumberOfRows": "Počet řádků",
+        "NumberOfColumns": "Počet sloupců",
+        "UrlToImage": "URL FlagCounter obrázku",
+        "ShowCountryCode": "Zobrazit kód země",
+        "HideFlag": "Skrýt vlajky",
+        "Font": "Rodina písem",
+        "FontSize": "Velikost písma",
+        "FontColor": "Barva písma"
+    }
+}
