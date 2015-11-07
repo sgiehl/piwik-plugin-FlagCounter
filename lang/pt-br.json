@@ -1,6 +1,6 @@
 {
     "FlagCounter": {
-        "CacheTime": "Cache para sempre",
+        "CacheTime": "Duração do cache",
         "CacheIntroduction": "Para evitar carga permanente no servidor piwik, os dados do país serão armazenados em cache para o tempo determinado.",
         "CacheDescription": "quantidade em segundos",
         "PluginDescription": "Este plugin permite que você inclua uma estatística simples em seu site mostrando as bandeiras e hits dos países de onde seus visitantes vieram.",
