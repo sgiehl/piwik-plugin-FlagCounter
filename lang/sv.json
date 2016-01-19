@@ -1,6 +1,9 @@
 {
     "FlagCounter": {
         "CacheDescription": "antal i sekunder",
-        "NumberOfRows": "Antal rader"
+        "NumberOfRows": "Antal rader",
+        "NumberOfColumns": "Antal kolumner",
+        "ShowCountryCode": "Visa landskod",
+        "HideFlag": "Dölj flaggor"
     }
 }
