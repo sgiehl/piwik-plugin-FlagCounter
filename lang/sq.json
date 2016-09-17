@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Jetëgjatësi fshehtine",
+        "CacheIntroduction": "Që të shmanget ngarkimi çdo herë te shërbyesi i Piwik-ut, të dhënat për vendin do të ruhen në fshehtinë për kohën e dhënë.",
+        "CacheDescription": "sasia në sekonda",
+        "PluginDescription": "Kjo shtojcë ju lejon të përfshini te sajti juaj një statistikë të thjeshtë që shfaq flamujt dhe vendet prej nga kanë ardhur vizitorët tuaj.",
+        "GeneratorDescription": "Më poshtë mund të zgjidhni disa nga mundësitë e formësimit, që të prodhohet url-ja për figurën\/iframe që do të përfshihet te sajti juaj.",
+        "NumberOfRows": "Numër rreshtash",
+        "NumberOfColumns": "Numër shtyllash",
+        "UrlToImage": "URL për te figura Flamur-Vend",
+        "ShowCountryCode": "Shfaq kod vendi",
+        "HideFlag": "Fshihi flamujt",
+        "Font": "Familje shkronjash",
+        "FontSize": "Madhësi shkronjash",
+        "FontColor": "Ngjyrë shkronjash"
+    }
+}

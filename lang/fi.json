@@ -1,0 +1,13 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Välimuistin kestoaika",
+        "CacheDescription": "pituus sekunneissa",
+        "NumberOfRows": "Rivien määrä",
+        "NumberOfColumns": "Sarakkeiden määrä",
+        "ShowCountryCode": "Näytä maakoodi",
+        "HideFlag": "Piilota liput",
+        "Font": "Kirjaisin",
+        "FontSize": "Tekstin koko",
+        "FontColor": "Tekstin väri"
+    }
+}
