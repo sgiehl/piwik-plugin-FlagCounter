@@ -9,6 +9,7 @@
 namespace Piwik\Plugins\FlagCounter;
 
 use Piwik\Access;
+use Piwik\Cache;
 use Piwik\API\Request;
 use Piwik\Common;
 use Piwik\Piwik;
@@ -21,12 +22,11 @@ use Piwik\View;
  */
 class Controller extends \Piwik\Plugin\ControllerAdmin
 {
-
     protected $cacheKey = 'FlagCounterCountries';
 
     protected function getCacheLifetime()
     {
-        $settings = new Settings('FlagCounter');
+        $settings = new SystemSettings('FlagCounter');
         $lifeTime = $settings->cacheLifeTime->getValue();
         return $lifeTime ? $lifeTime : 3600;
     }
@@ -43,17 +43,9 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
      */
     protected function getCachedData($period, $date)
     {
-        if (class_exists('\Piwik\CacheFile')) {
-            // Caching in Piwik < 2.10
-            $cache = new \Piwik\CacheFile('cache', $this->getCacheLifetime());
-            return $cache->get($this->getCacheKey($period, $date));
-
-        } else if (class_exists('\Piwik\Cache')) {
-            // Caching in Piwik >= 2.10
-            $cache = \Piwik\Cache::getLazyCache();
-            if ($cache->contains($this->getCacheKey($period, $date))) {
-                return $cache->fetch($this->getCacheKey($period, $date));
-            }
+        $cache = Cache::getLazyCache();
+        if ($cache->contains($this->getCacheKey($period, $date))) {
+            return $cache->fetch($this->getCacheKey($period, $date));
         }
 
         return null;
@@ -66,13 +58,8 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
      */
     protected function saveDataInCache($data, $period, $date)
     {
-        if (class_exists('\Piwik\CacheFile')) {
-            $cache = new \Piwik\CacheFile('cache', $this->getCacheLifetime());
-            $cache->set($this->getCacheKey($period, $date), $data);
-        } else if (class_exists('\Piwik\Cache')) {
-            $cache = \Piwik\Cache::getLazyCache();
+            $cache = Cache::getLazyCache();
             $cache->save($this->getCacheKey($period, $date), $data, $this->getCacheLifetime());
-        }
     }
 
     /**
@@ -94,23 +81,14 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         }
 
         try {
-
-            if(method_exists('\Piwik\Access', 'doAsSuperUser')) {
-                // fetch data from API as superuser so we can get them even without view access
-                /* @var \Piwik\DataTable $countryData */
-                $countryData = Access::getInstance()->doAsSuperUser(function () use ($period, $date) {
-                    $idSite = Common::getRequestVar('idSite', null, 'int');
-                    $segment = Request::getRawSegmentFromRequest();
-
-                    return API::getInstance()->getCountry($idSite, $period, $date, $segment);
-                });
-            } else {
-                // Fallback for Piwik < 2.8.0
-                Piwik::setUserHasSuperUserAccess();
+            // fetch data from API as superuser so we can get them even without view access
+            /* @var \Piwik\DataTable $countryData */
+            $countryData = Access::getInstance()->doAsSuperUser(function () use ($period, $date) {
                 $idSite = Common::getRequestVar('idSite', null, 'int');
                 $segment = Request::getRawSegmentFromRequest();
-                $countryData = API::getInstance()->getCountry($idSite, $period, $date, $segment);
-            }
+
+                return API::getInstance()->getCountry($idSite, $period, $date, $segment);
+            });
         } catch (\Exception $e) {
             return array();
         }

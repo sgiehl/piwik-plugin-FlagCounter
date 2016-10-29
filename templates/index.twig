@@ -1,7 +1,15 @@
 {% extends 'admin.twig' %}
 
+{% set title %}FlagCounter{% endset %}
+
 {% block content %}
-    <h2>FlagCounter</h2>
+<div piwik-content-block content-title="{{ title|e('html_attr') }}">
+
+    <style type="text/css">
+        select {
+            display: block;
+        }
+    </style>
 
     <div class="flagcounter adminTable">
         <p>{{ 'FlagCounter_PluginDescription'|translate }}</p>
@@ -60,7 +68,7 @@
             </select>
         </div>
         <div>
-            <label for="cols"><strong>{{ 'FlagCounter_Font'|translate }}</strong></label>
+            <label for="font"><strong>{{ 'FlagCounter_Font'|translate }}</strong></label>
             <select name="font" id="font">
                 {% for font in fonts %}
                 <option value="{{ font }}">{{ font }}</option>
@@ -128,5 +136,5 @@
         }(jQuery));
 
     </script>
-
+</div>
 {% endblock %}

@@ -1,13 +1,13 @@
 {
   "name": "FlagCounter",
-  "version": "0.4.0",
+  "version": "3.0.0",
   "description": "This plugin allows you to include a simple statistic in your website showing the flags and hits of the countries your visitors came from",
   "keywords": ["flag", "flagcounter"],
   "license": "GPL v3+",
   "homepage": "http://github.com/sgiehl/piwik-plugin-FlagCounter",
   "require": {
-    "piwik": ">=2.4.0",
-    "php": ">=5.3.0"
+    "piwik": ">=3.0.0-b1,<4.0.0-b1",
+    "php": ">=5.5.0"
   },
   "authors": [
     {
