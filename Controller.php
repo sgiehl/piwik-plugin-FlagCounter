@@ -203,7 +203,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
                 if ($showFlag) {
                     $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
-                    imagecopy($im, $icon, 5 + ($currentCol) * $colWidth, (5 + $currentRow * 25), 0, 0, 16, 12);
+                    imagecopyresampled($im, $icon, 5 + ($currentCol) * $colWidth, (5 + $currentRow * 25), 0, 0, 16, 12,64,48);
                     imagedestroy($icon);
                 }
 
