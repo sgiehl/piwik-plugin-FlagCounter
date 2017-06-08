@@ -1,0 +1,14 @@
+{
+    "FlagCounter": {
+        "CacheTime": "缓存生命周期",
+        "CacheDescription": "按秒统计数量",
+        "NumberOfRows": "行数",
+        "NumberOfColumns": "列数",
+        "UrlToImage": "URL标识统计图",
+        "ShowCountryCode": "显示国家代码",
+        "HideFlag": "隐藏标识",
+        "Font": "字体家族",
+        "FontSize": "字体大小",
+        "FontColor": "字体颜色"
+    }
+}

@@ -7,11 +7,11 @@
         "GeneratorDescription": "Hieronder kunt u enige configuratie opties kiezen om de URL voor het plaatje\/iframe welke in uw website gebruikt gaat worden.",
         "NumberOfRows": "Aantal rijen",
         "NumberOfColumns": "Aantal kolommen",
-        "UrlToImage": "URL naar FlagCounter plaatje",
-        "ShowCountryCode": "Toon landcode",
-        "HideFlag": "Verberg vlaggen",
-        "Font": "Lettertype groep",
+        "UrlToImage": "URL naar FlagCounter-afbeelding",
+        "ShowCountryCode": "Landcode tonen",
+        "HideFlag": "Vlaggen verbergen",
+        "Font": "Lettertype",
         "FontSize": "Lettergrootte",
-        "FontColor": "Tekst kleur"
+        "FontColor": "Tekstkleur"
     }
 }

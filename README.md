@@ -1,6 +1,6 @@
 # Piwik Flag Counter Plugin
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=sgiehl&url=https://github.com/sgiehl/piwik-plugin-FlagCounter&title=Piwik Plugin FlagCounter=&tags=github&category=software) 
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=sgiehl&url=https://github.com/sgiehl/piwik-plugin-FlagCounter&title=Piwik%20Plugin%20FlagCounter=&tags=github&category=software) 
 
 
 ## Description
@@ -58,6 +58,8 @@ Currently all ttf fonts located in the ```fonts``` directory within this plugin 
   - possibility to show country codes besides or instead of the flags
 - Version 0.3
   - added ability to choose a font family, size & color
+- Version 0.4
+  - fixed caching bug with multiple sites
 
 ## Support
 
