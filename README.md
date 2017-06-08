@@ -60,7 +60,7 @@ Currently all ttf fonts located in the ```fonts``` directory within this plugin 
   - added ability to choose a font family, size & color
 - Version 3.0.0
   - Compatibility for Piwik 3
-- Version 3.0.2
+- Version 3.0.3
   - fixed caching bug with multiple sites
 
 ## Support
