@@ -37,7 +37,6 @@ class SystemSettings extends \Piwik\Settings\Plugin\SystemSettings
         return $this->makeSetting('cacheLifeTime', $default = 3600, FieldConfig::TYPE_INT, function (FieldConfig $field) {
             $field->title = Piwik::translate('FlagCounter_CacheTime');
             $field->uiControl = FieldConfig::UI_CONTROL_TEXT;
-            $field->availableValues = array('nb_visits' => 'Visits', 'nb_actions' => 'Actions', 'visitors' => 'Visitors');
             $field->description = Piwik::translate('FlagCounter_CacheDescription');
             $field->introduction = Piwik::translate('FlagCounter_CacheIntroduction');
         });
