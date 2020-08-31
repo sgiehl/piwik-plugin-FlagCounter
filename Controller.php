@@ -1,8 +1,8 @@
 <?php
 /**
- * Piwik - free/libre analytics platform
+ * Matomo - free/libre analytics platform
  *
- * @link http://piwik.org
+ * @link https://matomo.org
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
@@ -26,7 +26,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
     protected function getCacheLifetime()
     {
-        $settings = new SystemSettings('FlagCounter');
+        $settings = new SystemSettings();
         $lifeTime = $settings->cacheLifeTime->getValue();
         return $lifeTime ? $lifeTime : 3600;
     }
@@ -271,6 +271,11 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         }, $fonts);
 
         self::setPeriodVariablesView($view);
+
+        array_walk($view->periodsNames, function(&$elem) {
+            $elem = $elem['singular'];
+        });
+
         $this->setBasicVariablesView($view);
         return $view->render();
     }
