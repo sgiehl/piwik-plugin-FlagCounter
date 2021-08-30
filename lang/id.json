@@ -1,0 +1,12 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Masa hidup tembolok",
+        "CacheDescription": "jumlah dalam detik",
+        "NumberOfRows": "Jumlah baris",
+        "NumberOfColumns": "Jumlah kolom",
+        "ShowCountryCode": "Tampilkan kode negara",
+        "HideFlag": "Sembunyikan bendera",
+        "FontSize": "Ukuran fon",
+        "FontColor": "Warna fon"
+    }
+}

@@ -1,7 +1,7 @@
 {
     "FlagCounter": {
         "CacheTime": "Durata della cache",
-        "CacheIntroduction": "Per evitare un carico permanente al server di Piwik i dati dei paesi verranno messi nella cache per il tempo stabilito.",
+        "CacheIntroduction": "Per evitare un carico permanente al server di Matomo i dati dei paesi verranno messi nella cache per il tempo stabilito.",
         "CacheDescription": "durata in secondi",
         "PluginDescription": "Questo plugin ti permette di aggiungere al tuo sito una semplice statistica che mostra le bandiere e le visite dei paesi da cui provengono i tuoi visitatori.",
         "GeneratorDescription": "Qui sotto puoi scegliere alcune opzioni di configurazione per generare l'URL per l'immagine\/iframe da includere nel tuo sito web.",

@@ -1,7 +1,7 @@
 {
     "FlagCounter": {
         "CacheTime": "Caché permanente",
-        "CacheIntroduction": "Para evitar la constante carga al servidor de Piwik, los datos de países serán cacheados por el tiempo especificado.",
+        "CacheIntroduction": "Para evitar la constante carga al servidor de Matomo, los datos de países serán cacheados por el tiempo especificado.",
         "CacheDescription": "tiempo en segundos",
         "PluginDescription": "Este complemento te permite incluir una simple estadística en su sitio de internet mostrando las banderas y visitas de los países de donde provienen sus visitantes.",
         "GeneratorDescription": "Debajo puedes especificar algunas opciones de configuración para generar la url de la imagen o marco a ser incluido en su sitio de internet.",

@@ -1,7 +1,10 @@
 {
     "FlagCounter": {
         "CacheTime": "缓存生命周期",
+        "CacheIntroduction": "为了避免对piwik服务器造成永久性负载，国家\/地区数据将在给定时间内进行缓存。",
         "CacheDescription": "按秒统计数量",
+        "PluginDescription": "该插件可让您在您的网站中包含一个简单的统计信息，显示访问者所在国家的国旗和点击率。",
+        "GeneratorDescription": "您可以在下面选择一些配置选项，以生成要包含在您的网站中的图片\/ iframe的网址。",
         "NumberOfRows": "行数",
         "NumberOfColumns": "列数",
         "UrlToImage": "URL标识统计图",

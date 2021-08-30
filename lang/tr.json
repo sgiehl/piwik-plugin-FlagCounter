@@ -1,13 +1,13 @@
 {
     "FlagCounter": {
         "CacheTime": "Ön bellek süresi",
-        "CacheIntroduction": "Kalıcı bir yük oluşturmamak için Piwik sunucusundaki ülke bilgileri belirtilen süreyle ön bellekte tutulur.",
+        "CacheIntroduction": "Kalıcı bir yük oluşturmamak için Matomo sunucusundaki ülke bilgileri belirtilen süreyle ön bellekte tutulur.",
         "CacheDescription": "saniye cinsinden süre",
         "PluginDescription": "Bu uygulama eki web sitesi ziyaretçilerinin geldikleri ülkelere göre bayrak ve tıklanma sayılarından oluşan basit bir istatistik görüntülenmesini sağlar.",
-        "GeneratorDescription": "Aşağıdan web sitenize eklenecek görsel ya da iframe İnternet adresini oluşturmak için kullanılan bazı seçenekleri ayarlayabilirsiniz.",
+        "GeneratorDescription": "Aşağıdan web sitesine eklenecek görsel ya da iframe İnternet adresini oluşturmak için kullanılan bazı yapılandırma seçeneklerini ayarlayabilirsiniz.",
         "NumberOfRows": "Satır sayısı",
         "NumberOfColumns": "Sütun sayısı",
-        "UrlToImage": "Bayrak Sayacı Görselinin Adresi",
+        "UrlToImage": "FlagCounter görselinin adresi",
         "ShowCountryCode": "Ülke kodu görüntülensin",
         "HideFlag": "Bayraklar gizlensin",
         "Font": "Yazı türü ailesi",

@@ -1,0 +1,11 @@
+{
+    "FlagCounter": {
+        "NumberOfRows": "Numărul de linii",
+        "NumberOfColumns": "Numărul de coloane",
+        "ShowCountryCode": "Arată codul țării",
+        "HideFlag": "Ascunde steagurile",
+        "Font": "Familia font-ului",
+        "FontSize": "Mărimea font-ului",
+        "FontColor": "Culoarea font-ului"
+    }
+}

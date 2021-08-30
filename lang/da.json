@@ -1,0 +1,12 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Cache-levetid",
+        "GeneratorDescription": "Herunder kan du angive nogle konfigurationsindstillinger for at generere en URL til et billede eller en iframe, du kan inkludere på din hjemmeside.",
+        "NumberOfRows": "Antal rækker",
+        "NumberOfColumns": "Antal kolonner",
+        "ShowCountryCode": "Vis landekode",
+        "Font": "Skrift",
+        "FontSize": "Skriftstørrelse",
+        "FontColor": "Skriftfarve"
+    }
+}

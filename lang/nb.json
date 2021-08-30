@@ -1,7 +1,7 @@
 {
     "FlagCounter": {
         "CacheTime": "Levetid for hurtiglager",
-        "CacheIntroduction": "For å unngå permanent trykk på piwik-serveren, vil landdata bli hurtiglagret for den oppgitte tiden.",
+        "CacheIntroduction": "For å unngå permanent trykk på Matomo-serveren, vil landdata bli hurtiglagret for den oppgitte tiden.",
         "CacheDescription": "mengde i sekunder",
         "PluginDescription": "Denne utvidelsen lar deg inkludere enkel statistikk på ditt nettsted som viser flaggene og treffene fra landene dine besøkere kommer fra.",
         "GeneratorDescription": "Nedenfor kan du velge noen konfigurasjoner for å generere URLen for bildet\/iframen som skal inkluderes på ditt nettsted.",

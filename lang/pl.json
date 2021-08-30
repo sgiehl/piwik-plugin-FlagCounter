@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Czas przechowywania Cache",
+        "CacheIntroduction": "Aby zmniejszyć obciążenie serwera Matomo dane krajów będą przechowywane przez wskazany czas.",
+        "CacheDescription": "wartość w sekundach",
+        "PluginDescription": "Wtyczka ta pozwala Ci załączyć proste statystyki na stronach Twoich serwisów, pokazując flagi i liczbę odwiedzin krajów, z których pochodzą Twoi odwiedzający.",
+        "GeneratorDescription": "Poniżej dostępne są opcje konfiguracyjne pozwalające wygenerować adres obrazka\/iframe załączanego na Twojej stronie.",
+        "NumberOfRows": "Liczba rzędów",
+        "NumberOfColumns": "Liczba kolumn",
+        "UrlToImage": "Adres obrazka FlagCounter",
+        "ShowCountryCode": "Pokaż kod kraju",
+        "HideFlag": "Ukryj flagi",
+        "Font": "Rodzina czcionki",
+        "FontSize": "Rozmiar czcionki",
+        "FontColor": "Kolor czcionki"
+    }
+}

@@ -1,5 +1,9 @@
 {
     "FlagCounter": {
-        "NumberOfRows": "Ridade arv"
+        "NumberOfRows": "Ridade arv",
+        "HideFlag": "Peida lipud",
+        "Font": "Kirjastiil",
+        "FontSize": "Kirja suurus",
+        "FontColor": "Kirja värv"
     }
 }

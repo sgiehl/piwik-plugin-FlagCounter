@@ -1,7 +1,7 @@
 {
     "FlagCounter": {
         "CacheTime": "Doba životnosti cache",
-        "CacheIntroduction": "Pro zabránění trvalé zátěže Piwik serveru, data zemí budou po danou dobu cachována.",
+        "CacheIntroduction": "Pro zabránění trvalé zátěže Matomo serveru, data zemí budou po danou dobu cachována.",
         "CacheDescription": "Počet v sekundách",
         "PluginDescription": "Tento zásuvný modul vám na stránkách umožňuje zobrazit jednoduchou statistiku s vlajkami zemí a počtem návštěv, odkud vaši návštěvníci přišli.",
         "GeneratorDescription": "Níže můžete zvolit možnosti pro vygenerování URL obrázku\/iframu, který bude vložen na vaše stránky.",

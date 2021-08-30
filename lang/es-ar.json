@@ -1,0 +1,17 @@
+{
+    "FlagCounter": {
+        "CacheTime": "Vida de caché",
+        "CacheIntroduction": "Para evitar la carga permanente al servidor de Matomo, los datos de país serán almacenados en caché por el tiempo establecido.",
+        "CacheDescription": "cantidad en segundos",
+        "PluginDescription": "Este plugin te permite incluir una estadística simple en tu sitio web mostrando las banderas y la cantidad de visitas desde los países de donde vienen tus visitantes.",
+        "GeneratorDescription": "Abajo podés comenzar con la configuración para generar la dirección web para la imagen o iFrame para ser incluido en tu sitio web.",
+        "NumberOfRows": "Número de filas",
+        "NumberOfColumns": "Número de columnas",
+        "UrlToImage": "Dirección web a la imagen de FlagCounter",
+        "ShowCountryCode": "Mostrar código de país",
+        "HideFlag": "Ocultar banderas",
+        "Font": "Familia tipográfica",
+        "FontSize": "Tamaño de la tipografía",
+        "FontColor": "Color de la tipografía"
+    }
+}

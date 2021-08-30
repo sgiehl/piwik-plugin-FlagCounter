@@ -1,7 +1,7 @@
 {
     "FlagCounter": {
         "CacheTime": "Cache-livslängd",
-        "CacheIntroduction": "För att undvika ständig belastning på Piwikservern kommer landsdata cachas för den angivna tiden.",
+        "CacheIntroduction": "För att undvika ständig belastning på Matomo servern kommer landsdata cachas för den angivna tiden.",
         "CacheDescription": "antal i sekunder",
         "PluginDescription": "Denna plugin ger dig möjligheten att inkludera enkel statistik på din webbsida genom att visa flaggor och träffar baserat på var besökarna kommer från för land.",
         "GeneratorDescription": "Nedan kan du välja konfigurationsinställningar för att skapa URLen för bilden\/iframen som ska inkluderas på din webbsida.",
