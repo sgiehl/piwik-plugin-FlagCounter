@@ -1,17 +1,17 @@
 {
     "FlagCounter": {
-        "CacheTime": "Lebensdauer des Cache",
-        "CacheIntroduction": "Um dauerhafte Belastung von Matomo zu vermeiden werden die Länder-Daten für den angegebenen Zeitraum zwischengespeichert.",
         "CacheDescription": "Anzahl in Sekunden",
-        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Website einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
-        "GeneratorDescription": "Hier können Sie einige Optionen wählen, um die URL zum Einbinden des Bildes\/Iframes in Ihre Website zu generieren.",
-        "NumberOfRows": "Anzahl der Zeilen",
-        "NumberOfColumns": "Anzahl der Spalten",
-        "UrlToImage": "URL zum FlagCounter-Bild",
-        "ShowCountryCode": "Länder-Kürzel anzeigen",
-        "HideFlag": "Flaggen verbergen",
+        "CacheIntroduction": "Um dauerhafte Belastung von Matomo zu vermeiden werden die Länder-Daten für den angegebenen Zeitraum zwischengespeichert.",
+        "CacheTime": "Lebensdauer des Cache",
         "Font": "Schriftart",
+        "FontColor": "Schriftfarbe",
         "FontSize": "Schriftgröße",
-        "FontColor": "Schriftfarbe"
+        "GeneratorDescription": "Hier können Sie einige Optionen wählen, um die URL zum Einbinden des Bildes/iFrames in Ihre Website zu generieren.",
+        "HideFlag": "Flaggen verbergen",
+        "NumberOfColumns": "Anzahl der Spalten",
+        "NumberOfRows": "Anzahl der Zeilen",
+        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Website einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
+        "ShowCountryCode": "Länder-Kürzel anzeigen",
+        "UrlToImage": "URL zum FlagCounter-Bild"
     }
 }
