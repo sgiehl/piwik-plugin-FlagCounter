@@ -1,12 +1,12 @@
 {
     "FlagCounter": {
-        "CacheDescription": "sasia në sekonda",
+        "CacheDescription": "madhësia në sekonda",
         "CacheIntroduction": "Që të shmanget ngarkimi çdo herë te shërbyesi i Matomo-s, të dhënat për vendin do të ruhen në fshehtinë për kohën e dhënë.",
         "CacheTime": "Jetëgjatësi fshehtine",
         "Font": "Familje shkronjash",
         "FontColor": "Ngjyrë shkronjash",
         "FontSize": "Madhësi shkronjash",
-        "GeneratorDescription": "Më poshtë mund të zgjidhni disa nga mundësitë e formësimit, që të prodhohet url-ja për figurën/iframe që do të përfshihet te sajti juaj.",
+        "GeneratorDescription": "Më poshtë mund të zgjidhni disa nga mundësitë e formësimit, që të prodhohet url-ja për figurën/iframe=n që do të përfshihet te sajti juaj.",
         "HideFlag": "Fshihi flamujt",
         "NumberOfColumns": "Numër shtyllash",
         "NumberOfRows": "Numër rreshtash",
