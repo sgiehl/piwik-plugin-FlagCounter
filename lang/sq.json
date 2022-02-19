@@ -1,17 +1,17 @@
 {
     "FlagCounter": {
-        "CacheTime": "Jetëgjatësi fshehtine",
-        "CacheIntroduction": "Që të shmanget ngarkimi çdo herë te shërbyesi i Matomo-s, të dhënat për vendin do të ruhen në fshehtinë për kohën e dhënë.",
         "CacheDescription": "sasia në sekonda",
-        "PluginDescription": "Kjo shtojcë ju lejon të përfshini te sajti juaj një statistikë të thjeshtë që shfaq flamujt dhe hit-et prej vendeve nga kanë ardhur vizitorët tuaj.",
-        "GeneratorDescription": "Më poshtë mund të zgjidhni disa nga mundësitë e formësimit, që të prodhohet url-ja për figurën\/iframe që do të përfshihet te sajti juaj.",
-        "NumberOfRows": "Numër rreshtash",
-        "NumberOfColumns": "Numër shtyllash",
-        "UrlToImage": "URL për te figura Flamur-Vend",
-        "ShowCountryCode": "Shfaq kod vendi",
-        "HideFlag": "Fshihi flamujt",
+        "CacheIntroduction": "Që të shmanget ngarkimi çdo herë te shërbyesi i Matomo-s, të dhënat për vendin do të ruhen në fshehtinë për kohën e dhënë.",
+        "CacheTime": "Jetëgjatësi fshehtine",
         "Font": "Familje shkronjash",
+        "FontColor": "Ngjyrë shkronjash",
         "FontSize": "Madhësi shkronjash",
-        "FontColor": "Ngjyrë shkronjash"
+        "GeneratorDescription": "Më poshtë mund të zgjidhni disa nga mundësitë e formësimit, që të prodhohet url-ja për figurën/iframe që do të përfshihet te sajti juaj.",
+        "HideFlag": "Fshihi flamujt",
+        "NumberOfColumns": "Numër shtyllash",
+        "NumberOfRows": "Numër rreshtash",
+        "PluginDescription": "Kjo shtojcë ju lejon të përfshini te sajti juaj një statistikë të thjeshtë që shfaq flamujt dhe hit-et prej vendeve nga kanë ardhur vizitorët tuaj.",
+        "ShowCountryCode": "Shfaq kod vendi",
+        "UrlToImage": "URL për te figurë FlagCounter"
     }
 }
