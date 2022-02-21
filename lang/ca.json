@@ -1,1 +1,17 @@
-{}
+{
+    "FlagCounter": {
+        "CacheDescription": "temps en segons",
+        "CacheIntroduction": "Per evitar la càrrega permanent al servidor piwik, les dades del país s'emmagatzemaran a la memòria cau durant el temps donat.",
+        "CacheTime": "Durada de la memòria cau",
+        "Font": "Tipus de lletra",
+        "FontColor": "Color de lletra",
+        "FontSize": "Mida de lletra",
+        "GeneratorDescription": "A continuació podeu triar algunes opcions de configuració per generar l'URL de la imatge/iframe que s'inclou al vostre lloc web.",
+        "HideFlag": "Amaga les banderes",
+        "NumberOfColumns": "Nombre de columnes",
+        "NumberOfRows": "Nombre de files",
+        "PluginDescription": "Aquest connector us permet incloure una estadística senzilla al vostre lloc web que mostra les banderes i visites dels països d'on provenen els vostres visitants.",
+        "ShowCountryCode": "Mostra el codi de país",
+        "UrlToImage": "URL de la imatge FlagCounter"
+    }
+}
