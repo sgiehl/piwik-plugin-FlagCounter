@@ -1,12 +1,17 @@
 {
     "FlagCounter": {
-        "CacheTime": "Masa hidup tembolok",
         "CacheDescription": "jumlah dalam detik",
-        "NumberOfRows": "Jumlah baris",
-        "NumberOfColumns": "Jumlah kolom",
-        "ShowCountryCode": "Tampilkan kode negara",
-        "HideFlag": "Sembunyikan bendera",
+        "CacheIntroduction": "Untuk menghindari beban permanen ke server piwik, data negara akan di-cache untuk waktu yang ditentukan.",
+        "CacheTime": "Masa hidup tembolok",
+        "Font": "Keluarga fon",
+        "FontColor": "Warna fon",
         "FontSize": "Ukuran fon",
-        "FontColor": "Warna fon"
+        "GeneratorDescription": "Di bawah ini Anda dapat memilih beberapa opsi konfigurasi untuk menghasilkan url untuk gambar/iframe yang akan disertakan di situs web Anda.",
+        "HideFlag": "Sembunyikan penanda",
+        "NumberOfColumns": "Jumlah kolom",
+        "NumberOfRows": "Jumlah baris",
+        "PluginDescription": "Plugin ini memungkinkan Anda untuk memasukkan statistik sederhana di situs web Anda yang menunjukkan bendera dan hit dari negara asal pengunjung Anda.",
+        "ShowCountryCode": "Tampilkan kode negara",
+        "UrlToImage": "URL ke gambar FlagCounter"
     }
 }
