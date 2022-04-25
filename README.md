@@ -1,8 +1,5 @@
 # Matomo Flag Counter Plugin
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=sgiehl&url=https://github.com/sgiehl/piwik-plugin-FlagCounter&title=Piwik%20Plugin%20FlagCounter=&tags=github&category=software) 
-
-
 ## Description
 
 This plugin allows you to include a small image or iframe in your website displaying the flags and total hits of the countries your website visitors came from
@@ -44,6 +41,11 @@ The full URL for the image would then look like:
 ```
 http://matomo.url/index.php?module=FlagCounter&action=image&idSite=1&period=range&date=1992-01-01,today&cols=2&rows=6
 ``` 
+
+This URL can then be simply used in an img tag on your site. e.g.
+```
+<img src="http://matomo.url/index.php?module=FlagCounter&action=image&idSite=1&period=range&date=1992-01-01,today&cols=2&rows=6" />
+```
 
 __Can I use a custom font?__
 
