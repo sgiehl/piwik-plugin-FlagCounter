@@ -10,7 +10,7 @@
         "HideFlag": "Sembunyikan bendera",
         "NumberOfColumns": "Jumlah kolom",
         "NumberOfRows": "Jumlah baris",
-        "PluginDescription": "Plugin ini memungkinkan Anda untuk memasukkan statistik sederhana di situs web Anda yang menunjukkan bendera dan hit dari negara asal pengunjung Anda.",
+        "PluginDescription": "Pengaya ini memungkinkan Anda untuk memasukkan statistik sederhana di situs web Anda yang menunjukkan bendera dan hit dari negara asal pengunjung Anda.",
         "ShowCountryCode": "Tampilkan kode negara",
         "UrlToImage": "URL ke gambar FlagCounter"
     }
