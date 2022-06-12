@@ -1,1 +1,5 @@
-{}
+{
+    "FlagCounter": {
+        "CacheTime": "Час життя кешу"
+    }
+}
