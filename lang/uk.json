@@ -1,5 +1,15 @@
 {
     "FlagCounter": {
-        "CacheTime": "Час життя кешу"
+        "CacheDescription": "кількість в секундах",
+        "CacheIntroduction": "Щоб уникнути постійного завантаження на сервер, дані країни будуть кешуватися протягом вказаного часу.",
+        "CacheTime": "Час життя кешу",
+        "Font": "Сімейство шрифтів",
+        "FontColor": "Колір шрифту",
+        "FontSize": "Розмір шрифту",
+        "HideFlag": "Приховати прапори",
+        "NumberOfColumns": "Кількість стовпців",
+        "NumberOfRows": "Кількість рядків",
+        "ShowCountryCode": "Показати код країни",
+        "UrlToImage": "URL-адреса до зображення FlagCounter"
     }
 }
