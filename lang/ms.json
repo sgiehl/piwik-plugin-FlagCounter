@@ -1,1 +1,10 @@
-{}
+{
+    "FlagCounter": {
+        "CacheDescription": "jumlah dalam beberapa saat",
+        "CacheIntroduction": "Untuk mengelakkan beban kekal ke pelayan piwik, data negara akan dicache untuk masa tertentu.",
+        "CacheTime": "Cache seumur hidup",
+        "GeneratorDescription": "Di bawah anda boleh memilih beberapa pilihan konfigurasi untuk menjana url bagi imej/iframe untuk disertakan dalam tapak web anda.",
+        "NumberOfRows": "Bilangan baris",
+        "PluginDescription": "Pemalam ini membolehkan anda memasukkan statistik ringkas dalam tapak web anda yang menunjukkan bendera dan hit negara asal pelawat anda."
+    }
+}
