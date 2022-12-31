@@ -6,11 +6,11 @@
         "Font": "Schriftart",
         "FontColor": "Schriftfarbe",
         "FontSize": "Schriftgröße",
-        "GeneratorDescription": "Hier können Sie einige Optionen wählen, um die URL zum Einbinden des Bildes/iFrames in Ihre Website zu generieren.",
+        "GeneratorDescription": "Hier können Sie einige Optionen wählen, um die URL zum Einbinden des Bildes/iFrames in Ihre Webseite zu generieren.",
         "HideFlag": "Flaggen verbergen",
         "NumberOfColumns": "Anzahl der Spalten",
         "NumberOfRows": "Anzahl der Zeilen",
-        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Website einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
+        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Webseite einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
         "ShowCountryCode": "Länder-Kürzel anzeigen",
         "UrlToImage": "URL zum FlagCounter-Bild"
     }
