@@ -6,11 +6,11 @@
         "Font": "Yazı türü ailesi",
         "FontColor": "Yazı rengi",
         "FontSize": "Yazı boyutu",
-        "GeneratorDescription": "Aşağıdan web sitesine eklenecek görsel ya da iframe İnternet adresini oluşturmak için kullanılan bazı yapılandırma seçeneklerini ayarlayabilirsiniz.",
+        "GeneratorDescription": "Aşağıdan siteye eklenecek görsel ya da iframe İnternet adresini oluşturmak için kullanılan bazı yapılandırma seçeneklerini ayarlayabilirsiniz.",
         "HideFlag": "Bayraklar gizlensin",
         "NumberOfColumns": "Sütun sayısı",
         "NumberOfRows": "Satır sayısı",
-        "PluginDescription": "Bu uygulama eki web sitesi ziyaretçilerinin geldikleri ülkelere göre bayrak ve tıklanma sayılarından oluşan basit bir istatistik görüntülenmesini sağlar.",
+        "PluginDescription": "Bu uygulama eki site ziyaretçilerinin geldikleri ülkelere göre bayrak ve tıklanma sayılarından oluşan basit bir istatistik görüntülenmesini sağlar.",
         "ShowCountryCode": "Ülke kodu görüntülensin",
         "UrlToImage": "FlagCounter görselinin adresi"
     }
