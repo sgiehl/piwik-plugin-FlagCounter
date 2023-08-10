@@ -6,6 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
+
 namespace Piwik\Plugins\FlagCounter;
 
 use Piwik\Access;
@@ -33,7 +34,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
     protected function getCacheKey($idSite, $period, $date)
     {
-        return preg_replace('/[^a-z0-9]/i', '', $this->cacheKey.$idSite.$period.$date);
+        return preg_replace('/[^a-z0-9]/i', '', $this->cacheKey . $idSite . $period . $date);
     }
 
     /**
@@ -175,7 +176,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $currentCol = 0;
 
             $fontSize = $fontSize < 2 || $fontSize > 30 ? 12 : $fontSize;
-            $fontFilePattern = dirname(__FILE__).'/fonts/%s.ttf';
+            $fontFilePattern = dirname(__FILE__) . '/fonts/%s.ttf';
 
             $fontFile = sprintf($fontFilePattern, 'Cantarell-Regular');
 
@@ -265,7 +266,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
         $view->defaultReportSiteName = Site::getNameFor($view->idSite);
         $view->date = $this->date;
 
-        $fonts = glob(dirname(__FILE__).'/fonts/*.ttf');
+        $fonts = glob(dirname(__FILE__) . '/fonts/*.ttf');
         $view->fonts = array_map(function($x) {
             return basename($x, '.ttf');
         }, $fonts);
