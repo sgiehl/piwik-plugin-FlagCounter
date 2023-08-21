@@ -66,6 +66,8 @@ Currently all ttf fonts located in the ```fonts``` directory within this plugin 
   - fixed caching bug with multiple sites
 - Version 4.0.0
   - Compatibility with Matomo 4
+- Version 5.0.0
+  - Compatibility with Matomo 5
 
 ## Support
 

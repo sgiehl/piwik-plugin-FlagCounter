@@ -3,102 +3,10 @@
 {% set title %}FlagCounter{% endset %}
 
 {% block content %}
-<div piwik-content-block content-title="{{ title|e('html_attr') }}">
-
-    <script type="application/javascript">
-
-        function updateUrl(name, value) {
-            $('#flagcounterimage').attr('src', broadcast.updateParamValue(name+'='+value, $('#flagcounterimage').attr('src')));
-            $('#flagcounter-url').text($('#flagcounterimage').attr('src'));
-        }
-
-        (function ($) {
-            $('#flagcounter-website').bind('change', function(e, site){
-                $('#flagcounterimage').attr('src', broadcast.updateParamValue('idSite='+site.id, $('#flagcounterimage').attr('src')));
-                $('#flagcounter-url').text($('#flagcounterimage').attr('src'));
-            });
-        }(jQuery));
-
-    </script>
-
-    <div class="flagcounter adminTable">
-        <p>{{ 'FlagCounter_PluginDescription'|translate }}</p>
-
-        <p>{{ 'FlagCounter_GeneratorDescription'|translate }}</p>
-
-        <div class="form-group row">
-            <label class="website-label"><strong>{{ 'General_Website'|translate }}</strong></label>
-            <div piwik-siteselector
-                 class="sites_autocomplete"
-                 siteid="{{ idSite }}"
-                 sitename="{{ defaultReportSiteName }}"
-                 show-all-sites-item="false"
-                 switch-site-on-select="false"
-                 id="flagcounter-website"
-                 show-selected-site="true"></div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col s6">
-                <div piwik-field uicontrol="number" name="rows" id="rows" onchange="updateUrl('rows', $('input', this).val())" full-width="true"
-                     data-title="{{ 'FlagCounter_NumberOfRows'|translate }}" value="5" min="1" max="20">
-                </div>
-            </div>
-            <div class="col s6">
-                <div piwik-field uicontrol="number" name="cols" id="cols" onchange="updateUrl('cols', $('input', this).val())" full-width="true"
-                     data-title="{{ 'FlagCounter_NumberOfColumns'|translate }}" value="2" min="1" max="10">
-                </div>
-            </div>
-        </div>
-        <div>
-            <div piwik-field uicontrol="select" name="font" id="font" onchange="updateUrl('font', $('input', this).val())" full-width="true"
-                 data-title="{{ 'FlagCounter_Font'|translate }}" options="{{ fonts|json_encode }}" value="day">
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col s6">
-                <div piwik-field uicontrol="number" name="fontsize" id="fontsize" onchange="updateUrl('fontsize', $('input', this).val())" full-width="true"
-                     data-title="{{ 'FlagCounter_FontSize'|translate }}" value="12" min="2" max="30">
-                </div>
-            </div>
-            <div class="col s6">
-                <div piwik-field uicontrol="text" name="fontcolor" id="fontcolor" onchange="updateUrl('fontcolor', $('input', this).val())" full-width="true"
-                     data-title="{{ 'FlagCounter_FontColor'|translate }}" value="0,0,0">
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col s6">
-                <div piwik-field uicontrol="text" name="date" id="date" onchange="updateUrl('date', $('input', this).val())" full-width="true"
-                     data-title="{{ 'General_Date'|translate }}" value="{{ date }}">
-                </div>
-            </div>
-            <div class="col s6">
-                <div piwik-field uicontrol="select" name="period" id="period" onchange="updateUrl('period', $('input', this).val())" full-width="true"
-                     data-title="{{ 'General_Period'|translate }}" options="{{ periodsNames|json_encode }}" value="day">
-                </div>
-            </div>
-        </div>
-        <div>
-            <div piwik-field uicontrol="checkbox" name="showcode" id="showcode" onchange="updateUrl('showcode', $('input', this).is(':checked') ? 1 : 0)"
-                 data-title="{{ 'FlagCounter_ShowCountryCode'|translate }}" value="0">
-            </div>
-        </div>
-
-        <div>
-            <div piwik-field uicontrol="checkbox" name="showflag" id="showflag" onchange="updateUrl('showflag', $('input', this).is(':checked') ? 0 : 1)"
-                 data-title="{{ 'FlagCounter_HideFlag'|translate }}" value="0">
-            </div>
-        </div>
-
-    </div>
-
-    <p>
-        <strong>{{ 'FlagCounter_UrlToImage'|translate }}:</strong><br />
-        <span id="flagcounter-url">{{ linkTo( { module: 'FlagCounter', action: 'image', rows: 5, cols: 2}) }}</span>
-    </p>
-
-    <p><img id="flagcounterimage" src="{{ linkTo( { module: 'FlagCounter', action: 'image', rows: 5, cols: 2}) }}" /></p>
-</div>
+<div
+    vue-entry="FlagCounter.UrlGenerator"
+    title="{{ title|e('html_attr') }}"
+    fonts="{{ fonts|json_encode }}"
+    periods-names="{{ periodsNames|json_encode }}"
+></div>
 {% endblock %}

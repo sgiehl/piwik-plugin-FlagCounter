@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Matomo - free/libre analytics platform
  *
- * @link https://matomo.org
+ * @link    https://matomo.org
  * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  *
  */
@@ -59,8 +60,8 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
      */
     protected function saveDataInCache($data, $idSite, $period, $date)
     {
-            $cache = Cache::getLazyCache();
-            $cache->save($this->getCacheKey($idSite, $period, $date), $data, $this->getCacheLifetime());
+        $cache = Cache::getLazyCache();
+        $cache->save($this->getCacheKey($idSite, $period, $date), $data, $this->getCacheLifetime());
     }
 
     /**
@@ -71,10 +72,10 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
      */
     protected function getCountryData()
     {
-        $countries = array();
-        $period = Common::getRequestVar('period', null, 'string');
-        $date = Common::getRequestVar('date', null, 'string');
-        $idSite = Common::getRequestVar('idSite', null, 'int');
+        $countries = [];
+        $period    = Common::getRequestVar('period', null, 'string');
+        $date      = Common::getRequestVar('date', null, 'string');
+        $idSite    = Common::getRequestVar('idSite', null, 'int');
 
         $cacheData = $this->getCachedData($idSite, $period, $date);
 
@@ -86,25 +87,24 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             // fetch data from API as superuser so we can get them even without view access
             /* @var \Piwik\DataTable $countryData */
             $countryData = Access::getInstance()->doAsSuperUser(function () use ($idSite, $period, $date) {
-
                 $segment = Request::getRawSegmentFromRequest();
 
                 return API::getInstance()->getCountry($idSite, $period, $date, $segment);
             });
         } catch (\Exception $e) {
-            return array();
+            return [];
         }
 
-        foreach ($countryData->getRows() AS $country) {
-            $countries[] = array(
+        foreach ($countryData->getRows() as $country) {
+            $countries[] = [
                 'name' => $country->getColumn('label'),
                 'icon' => $country->getMetadata('logo'),
                 'code' => $country->getMetadata('code') != 'xx' ? $country->getMetadata('code') : '  ',
                 'hits' => $country->getColumn(2),
-            );
+            ];
         }
 
-        usort($countries, function($a, $b){
+        usort($countries, function ($a, $b) {
             if ($a['hits'] == $b['hits']) {
                 return 0;
             }
@@ -143,13 +143,13 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
         $countries = $this->getCountryData();
 
-        $rows = Common::getRequestVar('rows', 5, 'int');
-        $cols = Common::getRequestVar('cols', 2, 'int');
-        $fontSize = Common::getRequestVar('fontsize', 12, 'int');
-        $fontColor = Common::getRequestVar('fontcolor', '0,0,0', 'string');
-        $font = preg_replace("/[^a-z0-9_-]/i", '', Common::getRequestVar('font', '', 'string'));
+        $rows            = Common::getRequestVar('rows', 5, 'int');
+        $cols            = Common::getRequestVar('cols', 2, 'int');
+        $fontSize        = Common::getRequestVar('fontsize', 12, 'int');
+        $fontColor       = Common::getRequestVar('fontcolor', '0,0,0', 'string');
+        $font            = preg_replace("/[^a-z0-9_-]/i", '', Common::getRequestVar('font', '', 'string'));
         $showCountryCode = Common::getRequestVar('showcode', 0, 'int');
-        $showFlag = Common::getRequestVar('showflag', 1, 'int');
+        $showFlag        = Common::getRequestVar('showflag', 1, 'int');
 
         if (substr_count($fontColor, ',') != 2) {
             $fontColor = '0,0,0';
@@ -165,9 +165,9 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $cols = ceil(count($countries) / $rows);
         }
 
-        $length     = 0;
+        $length = 0;
 
-        foreach($countries AS $country) {
+        foreach ($countries as $country) {
             $length = max($length, strlen($country['hits']));
         }
 
@@ -175,7 +175,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $currentRow = 0;
             $currentCol = 0;
 
-            $fontSize = $fontSize < 2 || $fontSize > 30 ? 12 : $fontSize;
+            $fontSize        = $fontSize < 2 || $fontSize > 30 ? 12 : $fontSize;
             $fontFilePattern = dirname(__FILE__) . '/fonts/%s.ttf';
 
             $fontFile = sprintf($fontFilePattern, 'Cantarell-Regular');
@@ -184,16 +184,16 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
                 $fontFile = sprintf($fontFilePattern, $font);
             }
 
-            $dimensions = imagettfbbox($fontSize, 0, $fontFile, str_pad('', $length, '0'));
+            $dimensions     = imagettfbbox($fontSize, 0, $fontFile, str_pad('', $length, '0'));
             $maxNumberWidth = abs($dimensions[4] - $dimensions[0]);
 
             $countryCodeWidth = 1;
             if ($showCountryCode) {
-                $dimensions = imagettfbbox($fontSize, 0, $fontFile, 'XXX');
+                $dimensions       = imagettfbbox($fontSize, 0, $fontFile, 'XXX');
                 $countryCodeWidth = abs($dimensions[4] - $dimensions[0]);
             }
 
-            $colWidth = 5 + $showFlag*25 + $showCountryCode*$countryCodeWidth + $maxNumberWidth + 20;
+            $colWidth = 5 + $showFlag * 25 + $showCountryCode * $countryCodeWidth + $maxNumberWidth + 20;
 
             $im = imagecreatetruecolor($cols * $colWidth + 1, $rows * 25 + 1);
 
@@ -202,10 +202,20 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
 
             foreach ($countries as $country) {
-
                 if ($showFlag) {
                     $icon = imagecreatefrompng(PIWIK_INCLUDE_PATH . DIRECTORY_SEPARATOR . $country['icon']);
-                    imagecopyresampled($im, $icon, 5 + ($currentCol) * $colWidth, (5 + $currentRow * 25), 0, 0, 16, 12,64,48);
+                    imagecopyresampled(
+                        $im,
+                        $icon,
+                        5 + ($currentCol) * $colWidth,
+                        (5 + $currentRow * 25),
+                        0,
+                        0,
+                        16,
+                        12,
+                        64,
+                        48
+                    );
                     imagedestroy($icon);
                 }
 
@@ -222,14 +232,14 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
                     );
                 }
 
-                $dimensions = imagettfbbox($fontSize, 0, $fontFile, number_format($country['hits'], 0, '', '.'));
+                $dimensions  = imagettfbbox($fontSize, 0, $fontFile, number_format($country['hits'], 0, '', '.'));
                 $numberWidth = abs($dimensions[4] - $dimensions[0]);
 
                 imagettftext(
                     $im,
                     $fontSize,
                     0,
-                    5 + $showFlag * 25 + $showCountryCode * $countryCodeWidth + ($currentCol) * $colWidth + $maxNumberWidth-$numberWidth,
+                    5 + $showFlag * 25 + $showCountryCode * $countryCodeWidth + ($currentCol) * $colWidth + $maxNumberWidth - $numberWidth,
                     (17 + ($currentRow) * 25),
                     imagecolorallocate($im, $fontColor[0], $fontColor[1], $fontColor[2]),
                     $fontFile,
@@ -250,7 +260,7 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
             $im = imagecreatetruecolor(1, 1);
         }
 
-        imagesavealpha($im, TRUE);
+        imagesavealpha($im, true);
         imagepng($im);
         imagedestroy($im);
         exit;
@@ -262,18 +272,15 @@ class Controller extends \Piwik\Plugin\ControllerAdmin
 
         $view = new View('@FlagCounter/index');
 
-        $view->idSite = Common::getRequestVar('idSite', $this->idSite, 'int');
-        $view->defaultReportSiteName = Site::getNameFor($view->idSite);
-        $view->date = $this->date;
-
-        $fonts = glob(dirname(__FILE__) . '/fonts/*.ttf');
-        $view->fonts = array_map(function($x) {
+        $fonts     = glob(dirname(__FILE__) . '/fonts/*.ttf');
+        $fontNames = array_map(function ($x) {
             return basename($x, '.ttf');
         }, $fonts);
+        $view->fonts = array_combine($fontNames, $fontNames);
 
         self::setPeriodVariablesView($view);
 
-        array_walk($view->periodsNames, function(&$elem) {
+        array_walk($view->periodsNames, function (&$elem) {
             $elem = $elem['singular'];
         });
 
