@@ -10,7 +10,7 @@
         "HideFlag": "Bayraklar gizlensin",
         "NumberOfColumns": "Sütun sayısı",
         "NumberOfRows": "Satır sayısı",
-        "PluginDescription": "Bu uygulama eki site ziyaretçilerinin geldikleri ülkelere göre bayrak ve tıklanma sayılarından oluşan basit bir istatistik görüntülenmesini sağlar.",
+        "PluginDescription": "Bu eklenti site ziyaretçilerinin geldikleri ülkelere göre bayrak ve tıklanma sayılarından oluşan basit bir istatistik görüntülenmesini sağlar.",
         "ShowCountryCode": "Ülke kodu görüntülensin",
         "UrlToImage": "FlagCounter görselinin adresi"
     }
