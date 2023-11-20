@@ -1,1 +1,14 @@
-{}
+{
+    "FlagCounter": {
+        "CacheDescription": "kopurua segundotan",
+        "CacheTime": "Cache-aren iraupena",
+        "Font": "Letra-tipo familia",
+        "FontColor": "Letra-kolorea",
+        "FontSize": "Letra-tamaina",
+        "HideFlag": "Ezkutatu banderak",
+        "NumberOfColumns": "Zutabe kopurua",
+        "NumberOfRows": "Errenkada kopurua",
+        "ShowCountryCode": "Erakutsi herrialde-kodea",
+        "UrlToImage": "FlagCounter irudirako URLa"
+    }
+}
