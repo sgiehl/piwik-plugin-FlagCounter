@@ -1,13 +1,16 @@
 {
     "FlagCounter": {
         "CacheDescription": "kopurua segundotan",
+        "CacheIntroduction": "Piwik zerbitzariari etengabeko karga eragitea saihesteko herrialdeen datuak cache-an gordeko dira denbora batez.",
         "CacheTime": "Cache-aren iraupena",
         "Font": "Letra-tipo familia",
         "FontColor": "Letra-kolorea",
         "FontSize": "Letra-tamaina",
+        "GeneratorDescription": "Behean konfigurazioko aukera batzuk hautatu ditzakezu zure webgunean txertatuko den irudi/iframe-aren URLa sortzeko.",
         "HideFlag": "Ezkutatu banderak",
         "NumberOfColumns": "Zutabe kopurua",
         "NumberOfRows": "Errenkada kopurua",
+        "PluginDescription": "Plugin honek aukera ematen dizu zure webgunean estatistika sinple bat erakusteko: bisitarien herrialdeak eta bakoitzetik izandako ekintzen kopuruak.",
         "ShowCountryCode": "Erakutsi herrialde-kodea",
         "UrlToImage": "FlagCounter irudirako URLa"
     }
