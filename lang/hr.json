@@ -1,1 +1,17 @@
-{}
+{
+    "FlagCounter": {
+        "CacheDescription": "količina u sekundama",
+        "CacheIntroduction": "Za izbjegavanje stalnog opterećenje Piwik servera, podaci o zemlji će se predmemorirati za zadano vrijeme.",
+        "CacheTime": "Vrijeme trajanja predmemorije",
+        "Font": "Obitelj fontova",
+        "FontColor": "Boja fonta",
+        "FontSize": "Veličina fonta",
+        "GeneratorDescription": "Ovdje možeš odabrati neke opcije konfiguracije za generiranje URL-a slike/iframea koji će se uključiti u tvoju web-stranicu.",
+        "HideFlag": "Sakrij zastave",
+        "NumberOfColumns": "Broj stupaca",
+        "NumberOfRows": "Broj redaka",
+        "PluginDescription": "Ovaj dodatak omogućuje uključivanje jednostavne statistike na tvoju web-stranicu koja prikazuje zastave i broj posjeta zemalja iz kojih dolaze tvoji posjetitelji.",
+        "ShowCountryCode": "Prikaži kod zemlje",
+        "UrlToImage": "URL do slike brojača zastava"
+    }
+}
