@@ -1,13 +1,13 @@
 {
     "FlagCounter": {
-        "CacheTime": "Välimuistin kestoaika",
         "CacheDescription": "pituus sekunneissa",
-        "NumberOfRows": "Rivien määrä",
-        "NumberOfColumns": "Sarakkeiden määrä",
-        "ShowCountryCode": "Näytä maakoodi",
-        "HideFlag": "Piilota liput",
-        "Font": "Fonttiperhe",
+        "CacheTime": "Välimuistin kestoaika",
+        "Font": "Kirjaisinperhe",
+        "FontColor": "Fontin väri",
         "FontSize": "Fontin koko",
-        "FontColor": "Fontin väri"
+        "HideFlag": "Piilota liput",
+        "NumberOfColumns": "Sarakkeiden määrä",
+        "NumberOfRows": "Rivien määrä",
+        "ShowCountryCode": "Näytä maakoodi"
     }
 }
