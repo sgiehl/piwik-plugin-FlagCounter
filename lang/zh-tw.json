@@ -1,17 +1,17 @@
 {
     "FlagCounter": {
-        "CacheTime": "快取時間",
-        "CacheIntroduction": "為避免每次顯示圖片 Matomo 伺服器要重新讀取一次，資料將設定快取時間。",
         "CacheDescription": "以秒為單位",
-        "PluginDescription": "這個外掛讓你可以在網站中加入簡易統計，以國旗顯示的訪客來源和訪問數。",
-        "GeneratorDescription": "你可以在下方變更選項，並產生要嵌入網站中的圖片\/網頁網址。",
-        "NumberOfRows": "每列個數",
-        "NumberOfColumns": "每欄個數",
-        "UrlToImage": "FlagCounter 圖片網址",
-        "ShowCountryCode": "顯示國家代碼",
+        "CacheIntroduction": "為避免對 Matomo 伺服器造成持續負載，國家資料會依所設定的時間進行快取。",
+        "CacheTime": "快取有效時間",
+        "Font": "字型系列",
+        "FontColor": "字型顏色",
+        "FontSize": "字型大小",
+        "GeneratorDescription": "你可以在下方選擇一些設定選項，產生要嵌入網站的圖片／iframe 網址。",
         "HideFlag": "隱藏國旗",
-        "Font": "字體字型",
-        "FontSize": "字體大小",
-        "FontColor": "字體顏色"
+        "NumberOfColumns": "欄數",
+        "NumberOfRows": "列數",
+        "PluginDescription": "這個外掛讓你可以在網站中加入簡易統計，以國旗顯示訪客的來源國家與訪問數。",
+        "ShowCountryCode": "顯示國家代碼",
+        "UrlToImage": "FlagCounter 圖片網址"
     }
 }
