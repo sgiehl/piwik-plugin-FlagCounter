@@ -1,8 +1,8 @@
 {
     "FlagCounter": {
         "CacheDescription": "Anzahl in Sekunden",
-        "CacheIntroduction": "Um dauerhafte Belastung von Matomo zu vermeiden werden die Länder-Daten für den angegebenen Zeitraum zwischengespeichert.",
-        "CacheTime": "Lebensdauer des Cache",
+        "CacheIntroduction": "Um dauerhafte Belastung von Matomo zu vermeiden, werden die Länder-Daten für den angegebenen Zeitraum zwischengespeichert.",
+        "CacheTime": "Lebensdauer des Caches",
         "Font": "Schriftart",
         "FontColor": "Schriftfarbe",
         "FontSize": "Schriftgröße",
@@ -10,7 +10,7 @@
         "HideFlag": "Flaggen verbergen",
         "NumberOfColumns": "Anzahl der Spalten",
         "NumberOfRows": "Anzahl der Zeilen",
-        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit eine kleine Statistik in ihre Webseite einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
+        "PluginDescription": "Dieses Plugin gibt Ihnen die Möglichkeit, eine kleine Statistik in Ihre Webseite einzufügen, die alle Flaggen und Besuchsanzahlen der Länder anzeigt, aus denen Ihre Besucher kommen.",
         "ShowCountryCode": "Länder-Kürzel anzeigen",
         "UrlToImage": "URL zum FlagCounter-Bild"
     }
