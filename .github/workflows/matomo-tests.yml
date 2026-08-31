@@ -1,0 +1,60 @@
+# Action for running tests
+# This file has been automatically created.
+# To recreate it you can run this command
+# ./console generate:test-action --plugin="FlagCounter" --php-versions="8.1,8.5" --schedule-cron="10 2 * * 6"
+
+name: Plugin FlagCounter Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - '**.x-dev'
+  workflow_dispatch:
+  schedule:
+  - cron: "10 2 * * 6"
+
+permissions:
+  actions: read
+  checks: none
+  contents: read
+  deployments: none
+  issues: read
+  packages: none
+  pull-requests: read
+  repository-projects: none
+  security-events: none
+  statuses: none
+
+concurrency:
+  group: php-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  PluginTests:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ 'matomo6_min_php', 'matomo6_max_php' ]
+        target: ['minimum_required_matomo', 'maximum_supported_matomo']
+        database:
+          - { engine: 'Mysql', version: '8.0' }
+          - { engine: 'Mariadb', version: '10.6' }
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          lfs: true
+          persist-credentials: false
+      - name: Run tests
+        uses: matomo-org/github-action-tests@main
+        with:
+          plugin-name: 'FlagCounter'
+          php-version: ${{ matrix.php }}
+          test-type: 'PluginTests'
+          matomo-test-branch: ${{ matrix.target }}
+          mysql-engine: ${{ matrix.database.engine }}
+          mysql-version: ${{ matrix.database.version }}
+          artifacts-pass: ${{ secrets.ARTIFACTS_PASS }}
+          upload-artifacts: ${{ matrix.php == 'matomo6_min_php' && matrix.target == 'maximum_supported_matomo' && matrix.database.engine == 'Mysql' }}
