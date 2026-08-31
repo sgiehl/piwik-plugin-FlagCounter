@@ -14,7 +14,7 @@ use Piwik\Cache;
 use Piwik\Plugins\FlagCounter\Controller;
 use Piwik\Plugins\FlagCounter\SystemSettings;
 use Piwik\Plugins\FlagCounter\tests\Fixtures\CountryVisits;
-use Piwik\Tests\Framework\TestCase\IntegrationTestCase;
+use Piwik\Tests\Framework\TestCase\SystemTestCase;
 
 /**
  * Exposes the controller internals the counter is built on.
@@ -42,7 +42,7 @@ class ControllerUnderTest extends Controller
  * @group FlagCounter
  * @group FlagCounterControllerTest
  */
-class ControllerTest extends IntegrationTestCase
+class ControllerTest extends SystemTestCase
 {
     /** @var CountryVisits */
     public static $fixture;

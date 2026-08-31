@@ -28,6 +28,8 @@ class CountryVisits extends Fixture
      * positions are deterministic; 'us' and 'jp' tie so the ordering below them is not
      * asserted. The unknown visit is tracked separately.
      */
+    public const UNKNOWN_COUNTRY = 'xx';
+
     public const VISITS_PER_COUNTRY = [
         'de' => 4,
         'fr' => 3,
@@ -65,12 +67,13 @@ class CountryVisits extends Fixture
             }
         }
 
-        // a tracker without a country, so the visit is attributed to the unknown country
-        $unknown = self::getTracker($this->idSite, $this->dateTime, $defaultInit = true);
-        $unknown->setTokenAuth(self::getTokenAuth());
-        $this->prepareVisit($unknown, ++$visit);
+        // 'xx' is what Matomo stores when a visitor's country cannot be determined.
+        // It is set explicitly, because the default init gives the tracker a browser
+        // language which the fallback provider would otherwise resolve to a country.
+        $this->prepareVisit($tracker, ++$visit);
+        $tracker->setCountry(self::UNKNOWN_COUNTRY);
 
-        self::checkResponse($unknown->doTrackPageView('Page viewed from an unknown country'));
+        self::checkResponse($tracker->doTrackPageView('Page viewed from an unknown country'));
     }
 
     private function prepareVisit($tracker, int $visit): void
