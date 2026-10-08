@@ -1,1 +1,17 @@
-{}
+{
+    "FlagCounter": {
+        "CacheDescription": "tal på sekund",
+        "CacheIntroduction": "For å unngå konstant belastning på piwik-tenaren blir landdataa mellomlagra i den angitte tida.",
+        "CacheTime": "Levetid for mellomlager",
+        "Font": "Skrifttype",
+        "FontColor": "Skriftfarge",
+        "FontSize": "Skriftstorleik",
+        "GeneratorDescription": "Nedanfor kan du velje nokre innstillingar for å lage URL-en til biletet/iframen som skal leggjast inn på nettstaden din.",
+        "HideFlag": "Gøym flagg",
+        "NumberOfColumns": "Tal på kolonnar",
+        "NumberOfRows": "Tal på rader",
+        "PluginDescription": "Med dette innstikket kan du leggje inn ein enkel statistikk på nettstaden din som viser flagg og treff for landa dei besøkande kom frå.",
+        "ShowCountryCode": "Vis landskode",
+        "UrlToImage": "URL til FlagCounter-biletet"
+    }
+}

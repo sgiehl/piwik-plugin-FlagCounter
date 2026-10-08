@@ -1,17 +1,17 @@
 {
     "FlagCounter": {
-        "CacheTime": "Levetid for hurtiglager",
-        "CacheIntroduction": "For å unngå permanent trykk på Matomo-serveren, vil landdata bli hurtiglagret for den oppgitte tiden.",
         "CacheDescription": "mengde i sekunder",
-        "PluginDescription": "Denne utvidelsen lar deg inkludere enkel statistikk på ditt nettsted som viser flaggene og treffene fra landene dine besøkere kommer fra.",
-        "GeneratorDescription": "Nedenfor kan du velge noen konfigurasjoner for å generere URLen for bildet\/iframen som skal inkluderes på ditt nettsted.",
-        "NumberOfRows": "Antall rader",
-        "NumberOfColumns": "Antall kolonner",
-        "UrlToImage": "URL til FlagCounter-bilde",
-        "ShowCountryCode": "Vis landskode",
-        "HideFlag": "Skjul flagg",
+        "CacheIntroduction": "For å unngå permanent trykk på Matomo-serveren, vil landdata bli hurtiglagret for den oppgitte tiden.",
+        "CacheTime": "Levetid for hurtiglager",
         "Font": "Skriftfamilie",
+        "FontColor": "Skriftfarge",
         "FontSize": "Skriftstørrelse",
-        "FontColor": "Skriftfarge"
+        "GeneratorDescription": "Nedenfor kan du velge noen konfigurasjoner for å generere URLen for bildet/iframen som skal inkluderes på ditt nettsted.",
+        "HideFlag": "Skjul flagg",
+        "NumberOfColumns": "Antall kolonner",
+        "NumberOfRows": "Antall rader",
+        "PluginDescription": "Dette tillegget lar deg inkludere enkel statistikk på nettstedet ditt som viser flaggene og treffene fra landene de besøkende kommer fra.",
+        "ShowCountryCode": "Vis landskode",
+        "UrlToImage": "URL til FlagCounter-bilde"
     }
 }
