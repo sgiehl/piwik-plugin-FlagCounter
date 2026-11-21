@@ -1,11 +1,17 @@
 {
     "FlagCounter": {
-        "NumberOfRows": "Numărul de linii",
-        "NumberOfColumns": "Numărul de coloane",
-        "ShowCountryCode": "Arată codul țării",
-        "HideFlag": "Ascunde steagurile",
+        "CacheDescription": "valoare în secunde",
+        "CacheIntroduction": "Pentru a evita încărcarea permanentă a serverului piwik, datele despre țări vor fi păstrate în cache pe durata indicată.",
+        "CacheTime": "Durata de viață a cache-ului",
         "Font": "Familia font-ului",
+        "FontColor": "Culoarea font-ului",
         "FontSize": "Mărimea font-ului",
-        "FontColor": "Culoarea font-ului"
+        "GeneratorDescription": "Mai jos puteți alege câteva opțiuni de configurare pentru a genera URL-ul imaginii/iframe-ului de inclus pe site.",
+        "HideFlag": "Ascunde steagurile",
+        "NumberOfColumns": "Numărul de coloane",
+        "NumberOfRows": "Numărul de linii",
+        "PluginDescription": "Acest plugin vă permite să includeți pe site o statistică simplă care arată steagurile și accesările țărilor din care provin vizitatorii.",
+        "ShowCountryCode": "Arată codul țării",
+        "UrlToImage": "URL-ul imaginii FlagCounter"
     }
 }
