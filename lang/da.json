@@ -1,12 +1,17 @@
 {
     "FlagCounter": {
+        "CacheDescription": "antal sekunder",
+        "CacheIntroduction": "For at undgå konstant belastning af piwik-serveren gemmes landedata i cachen i det angivne tidsrum.",
         "CacheTime": "Cache-levetid",
-        "GeneratorDescription": "Herunder kan du angive nogle konfigurationsindstillinger for at generere en URL til et billede eller en iframe, du kan inkludere på din hjemmeside.",
-        "NumberOfRows": "Antal rækker",
-        "NumberOfColumns": "Antal kolonner",
-        "ShowCountryCode": "Vis landekode",
         "Font": "Skrift",
+        "FontColor": "Skriftfarve",
         "FontSize": "Skriftstørrelse",
-        "FontColor": "Skriftfarve"
+        "GeneratorDescription": "Herunder kan du angive nogle konfigurationsindstillinger for at generere en URL til et billede eller en iframe, du kan inkludere på din hjemmeside.",
+        "HideFlag": "Skjul flag",
+        "NumberOfColumns": "Antal kolonner",
+        "NumberOfRows": "Antal rækker",
+        "PluginDescription": "Dette plugin lader dig indsætte en enkel statistik på din hjemmeside, der viser flag og hits for de lande, dine besøgende kommer fra.",
+        "ShowCountryCode": "Vis landekode",
+        "UrlToImage": "URL til FlagCounter-billede"
     }
 }
